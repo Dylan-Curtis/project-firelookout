@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Users.destroy_all
+Trails.destroy_all
+Reviews.destroy_all
+
+
+puts "Seeding Users"
+5.times {Users.create(name: Faker::FunnyName.name,
+    password: Faker::Internet.password,
+    email: Faker::Internet.email}
+puts "Seeding Trails"
+
+
+puts "seeding reviews"
+
+puts "all seeded"
