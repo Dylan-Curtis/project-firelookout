@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_14_213713) do
+ActiveRecord::Schema.define(version: 2023_02_14_215658) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "body"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2023_02_14_213713) do
     t.integer "length"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "body"
+    t.string "location"
   end
 
   create_table "users", force: :cascade do |t|

@@ -11,11 +11,15 @@ Reviews.destroy_all
 
 
 puts "Seeding Users"
-5.times {Users.create(name: Faker::FunnyName.name,
+5.times {User.create(name: Faker::FunnyName.name,
     password: Faker::Internet.password,
     email: Faker::Internet.email}
 puts "Seeding Trails"
-
+Trail.create(
+   { name: "North Mountain Fire Lookout"
+    elevation_gain:
+    length:}
+    )
 
 puts "seeding reviews"
 
