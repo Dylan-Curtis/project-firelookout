@@ -12,6 +12,7 @@ function Dashboard() {
         const response = await fetch('trails')
         const trails = await response.json() 
       setTrails(trails)
+      console.log(trails)
       
     }
     fetchTrails()

@@ -1,7 +1,7 @@
-function TrailCard({trail, image}){
+function TrailCard({trail, photo}){
 return(
     <div className="TrailCard">
-        <img src={image} alt={trail.name} />
+        <img src={photo} alt={trail.name} />
         <h4>{trail.name}</h4>
     </div>
 )}

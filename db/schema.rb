@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2023_02_14_215658) do
     t.string "name"
     t.integer "elevation_gain"
     t.float "length"
+    t.string "image"
+    t.string "map"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "body"
