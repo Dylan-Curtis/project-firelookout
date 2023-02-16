@@ -1,6 +1,6 @@
 import { useState } from 'react'
 function LoginForm({ onLogin, setErrors, errors }) {
-    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     // const [errors, setErrors] = useState([]);
 
@@ -11,7 +11,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name, password }),
+          body: JSON.stringify({ email, password }),
         }).then((r) => {           
             if (r.ok) {
               r.json().then((user) => onLogin(user));
@@ -23,13 +23,13 @@ function LoginForm({ onLogin, setErrors, errors }) {
         return (
             <form onSubmit={handleSubmit}>
              
-                <label htmlFor="name">name</label>
+                <label htmlFor="email">email</label>
                 <input
                   type="text"
-                  id="name"
+                  id="email"
                   autoComplete="off"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
             
              

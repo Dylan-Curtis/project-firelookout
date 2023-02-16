@@ -1,11 +1,28 @@
 import React, {useState, useEffect} from 'react'
 import TrailCard from './TrailCard'
 import LoginForm from './LoginForm'
-function Dashboard() {
+import SignUpForm from './SignUpForm'
 
-    const [trails, setTrails] = useState([])
-    const [user, setUser] = useState([])
-    const [errors, setErrors] = useState([]);
+// import Header from './components/Header'
+
+function Dashboard({user, setUser, setErrors, setTrails, errors, trails}) {
+    
+
+    useEffect(()=> {
+      const fetchUser = async () =>{        
+        const response = await fetch('authorized_user')
+        if (response.ok){
+        const user = await response.json() 
+        setUser(user)
+      }
+else{
+  const error = response.json()
+  setErrors(error.error)
+}
+      }
+      if(!user){
+      fetchUser()}
+    },[user, setErrors, setUser])
   
     useEffect(() => {
       const fetchTrails = async () => {
@@ -15,16 +32,22 @@ function Dashboard() {
       console.log(trails)
       
     }
-    fetchTrails()
-      .catch(console.error)    
-  }, [])     
+    if (user) {
+    fetchTrails()    
+      .catch(console.error)
+    }
+     
+  }, [user, setTrails])  
   
-    if (!user) return <LoginForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>;
+  
+  
+    if (!user) return <div> <SignUpForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>
+    <LoginForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>;</div>
 
-    let trailCards = trails.map(trail => <TrailCard key={trail.id} trail={trail} />)
+    const trailCards = trails && trails.map(trail => <TrailCard key={trail.id} trail={trail} />)
   
     return (
-        <>
+        <>         
          <div className="trailList">
           {trailCards}
         </div>
