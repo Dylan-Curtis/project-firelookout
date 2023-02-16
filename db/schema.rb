@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2023_02_14_215658) do
     t.string "body"
     t.string "condition"
     t.integer "rating"
-    t.string "photo"
     t.integer "trail_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
