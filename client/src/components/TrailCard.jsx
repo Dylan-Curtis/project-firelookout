@@ -5,12 +5,11 @@ return(
         <h5>
             </h5>
         <h4 className="trail-name">{trail.name}</h4>
-        <h5 classname="hiking-des">Length:{trail.length} mi ~ </h5>
+        <h5 className="hiking-des">Length:{trail.length} mi ~ </h5>
         <h3> {trail.reviews.map((review, index) => (
         <div key={index}>
-          <li>{review.body}</li>
-          <li>{review.condition}</li>
-          <li>{review.rating}</li>
+          <li className ="review">{review.body}</li>
+          <li  >{review.condition}</li>         
         </div>
       ))}</h3>
 

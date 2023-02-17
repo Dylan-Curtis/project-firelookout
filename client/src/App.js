@@ -17,7 +17,7 @@ function App() {
  
   return (
     <div>
-     <Header user={user} setUser={setUser}/>
+     <Header user={user} setUser={setUser} setErrors={setErrors} errors={errors}/>
       <main>
         {/* <Switch> */}
           <Routes>

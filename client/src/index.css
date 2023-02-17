@@ -13,7 +13,7 @@ code {
 }
 #links {
   background-color: whitesmoke;
-  border: 1rem rgba(182, 235, 184, 0.692) solid;
+  /* border: 1rem rgba(182, 235, 184, 0.692) solid; */
   text-align: center;
   justify-content: space-around;
 
@@ -33,4 +33,42 @@ code {
   margin: 0;
   padding: 0;
   
+}
+.TrailCard {
+  text-align: center;
+  border: grey solid 1px;
+  padding: 0;
+  width: 15rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+
+  /* box-shadow: 3px 4px #4be05f9a; */
+
+  cursor: pointer;
+  object-fit: cover;
+  
+}
+.trail-image {
+  justify-self: center;
+  height: 12rem;
+  width: 15rem;
+  
+  overflow: hidden;
+}
+.trail-image:hover { 
+  transform: scale(1.1)
+}
+.trail-name{
+  color: forestgreen;
+  font-weight: bold;
+  
+}
+.hiking-des{
+  color: lightcyan;
+  font-size: 8;
+}
+
+.review{
+  font-size: small;
 }

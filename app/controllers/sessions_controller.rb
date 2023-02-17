@@ -11,8 +11,9 @@ skip_before_action :authorized_user, only: [:login]
 end   
     
     def logout
-        sessions.delete :user_id
+        session.delete :user_id
         head :no_content
     end
 end
 
+ 
