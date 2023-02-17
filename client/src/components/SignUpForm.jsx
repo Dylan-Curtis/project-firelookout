@@ -48,6 +48,7 @@ function SignUpForm({ onLogin, setErrors }) {
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
             />
+             <label htmlFor="email">Email</label>
              <input
               type="test"
               id="email"
@@ -64,6 +65,7 @@ function SignUpForm({ onLogin, setErrors }) {
               onChange={(e) => setPasswordConfirmation(e.target.value)}
               autoComplete="current-password"
             />
+            <button type="submit">Submit</button>
         </form>
             
             )

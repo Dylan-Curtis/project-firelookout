@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import TrailCard from './TrailCard'
 import LoginForm from './LoginForm'
 import SignUpForm from './SignUpForm'
@@ -17,6 +17,7 @@ function Dashboard({user, setUser, setErrors, setTrails, errors, trails}) {
       }
 else{
   const error = response.json()
+  console.log(error.error)
   setErrors(error.error)
 }
       }
@@ -42,7 +43,7 @@ else{
   
   
     if (!user) return <div> <SignUpForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>
-    <LoginForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>;</div>
+    <LoginForm onLogin={setUser} errors ={errors} setErrors={setErrors} user={user} setUser = {setUser}/></div>
 
     const trailCards = trails && trails.map(trail => <TrailCard key={trail.id} trail={trail} />)
   

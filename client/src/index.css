@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#links {
+  background-color: whitesmoke;
+  border: 1rem rgba(182, 235, 184, 0.692) solid;
+  text-align: center;
+  justify-content: space-around;
+
+  
+}
+.nav {
+  padding-left: 0px;
+  border: 3em;
+  border-color: black;
+  text-align: center;
+  border: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  
+}

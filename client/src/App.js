@@ -17,20 +17,17 @@ function App() {
  
   return (
     <div>
-     <Header/>
+     <Header user={user} setUser={setUser}/>
       <main>
         {/* <Switch> */}
           <Routes>
             <Route path="/" element={<Dashboard trails={trails} setTrails={setTrails} user={user} setUser={setUser} errors={errors} setErrors={setErrors}/> } />      
             <Route path="/signup" element= {<SignUpForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>} />
-            <Route path="/login" element= {<LoginForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>} />
+            <Route path="/login" element= {<LoginForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>} />            
             {/* <Route path= element={<LoginForm />}/>    */}
          </Routes>
         {/* </Switch> */}
-      </main>
-      <footer>
-      
-      </footer> 
+      </main>  
     </div>
   )
 }

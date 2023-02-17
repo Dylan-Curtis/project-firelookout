@@ -7,6 +7,16 @@ class UsersController < ApplicationController
        sessions[:user_id] = user.id
        render json: user, status: :created
     end      
+
+    def destroy
+        @user.delete() 
+        head :no_content
+    end
+
+    def update
+        @user.update(user_params)
+        render json: @user, status: :ok
+    end
     
     def show       
         render json: @user, status: :ok

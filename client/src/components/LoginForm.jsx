@@ -23,7 +23,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
         return (
             <form onSubmit={handleSubmit}>
              
-                <label htmlFor="email">email</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="text"
                   id="email"
@@ -43,7 +43,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
                 />
                       
              
-                {errors.map((err) => (
+                {errors && errors.map((err) => (
                     <p key={err} style={{ color: "red" }}>
                     {err}
                     </p>

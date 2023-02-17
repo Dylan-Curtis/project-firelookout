@@ -6,6 +6,6 @@ class ReviewsController < ApplicationController
     
     private 
     def review_params
-        params.permit(:body, :, :email)
+        params.permit(:body, :condition, :rating)
     end
 end
