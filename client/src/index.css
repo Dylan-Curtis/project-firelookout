@@ -1,37 +1,29 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:  'Poppins';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Poppins';
 }
 #links {
   background-color: whitesmoke;
   /* border: 1rem rgba(182, 235, 184, 0.692) solid; */
-  text-align: center;
+  /* text-align: center; */
   justify-content: space-around;
 
   
 }
 .nav {
-  padding-left: 0px;
-  border: 3em;
-  border-color: black;
-  text-align: center;
-  border: 0;
+  padding-left: 0px;  
   border: 0;
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent;
-  margin: 0;
-  padding: 0;
+  background: #748A76;  
+  padding: 30px;
   
 }
 .TrailCard {
@@ -62,13 +54,339 @@ code {
 .trail-name{
   color: forestgreen;
   font-weight: bold;
-  
+  width: 12vw;  
 }
 .hiking-des{
-  color: lightcyan;
-  font-size: 8;
+  font-family:"poppins";
+line-height: 1.5;
+/* overflow: hidden; */
+text-overflow: ellipsis;
+white-space: nowrap;
+  
 }
 
 .review{
   font-size: small;
+}
+
+.lookoutImage{
+  /* max-height: 10px; */
+  top: 2vw;
+  position: absolute;
+  object-position : left;
+ 
+}
+
+.LookoutTrails{
+  font-family: 'Poppins';
+  font-size: 35px;
+  color : #F3C831;
+  top: 15px;
+  left: 15vw;
+  position: absolute;
+}
+.HikeATrail{
+  position: absolute;
+  font-size: 20px;
+  left: 39vw;
+  font-family: 'Poppins';
+}
+.CreateATrail{
+  position: absolute;
+  font-size: 20px;
+  left: 50vw;
+  font-family: 'Poppins';
+}
+
+.headImage{
+width: 100%;
+height: auto;
+}
+
+.logInButton{
+  position: absolute;
+  width: 75px;
+  height: 21px;
+  left: 83vw;
+  top: 0px;
+  background-color: #F3C831;
+}
+.signupButton{
+  position: absolute;
+  width: 75px;
+  height: 21px;
+  left: 85vw;
+  top: 0px;
+  background-color: #748A76;
+}
+/* CSS */
+.signupButton{
+  align-items: center;
+  appearance: none;
+  background-color: #F3C831;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.signupButton:hover {
+  background: #FFFFFF;
+  color: #F3C831;
+}
+
+.signupButton:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.signupButton:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.signupButton:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.signupButton:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.signupButton:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.signupButton:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.signupButton:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+
+/* CSS */
+.logInButton {
+  align-items: center;
+  appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.logInButton:hover {
+  background: #D1D8D2;
+  color: #4C6251;
+}
+
+.logInButton:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.logInButton:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.logInButton:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.logInButton:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.logInButton:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.logInButton:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.logInButton:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+/* body {
+  align-items: center;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+} */
+
+.form {
+  background-color: #D9D9D9;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: relative;
+  padding: 20px;
+  width: 320px;
+  justify-self: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;  
+  
+}
+
+.title {
+  color: #4C6251;
+  font-family: 'Poppins';
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: #65657b;
+  font-family: 'Poppins';
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #7D7B7B;
+  font-size: 18px;   
+  width: 100%; 
+  margin-bottom: 1vw;
+  
+}
+
+.input { 
+  font-size: 18px;
+  height: 100%; 
+  padding: 4px 20px 0; 
+}
+
+
+
+.cut {
+  background-color: #15172b;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+  padding-bottom: 10v;
+}
+
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.placeholder {
+  color: #65657b;
+  font-family: 'Poppins';
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+/* .input:focus ~ .placeholder {
+  color: #dc2f55;
+} */
+
+.submit {
+  background-color: #4A5744;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  
+  text-align: center;
+  width: 100%;
+}
+
+.submit:active {
+  background-color: #4A5744;
+}
+.lookoutImageForm{
+  /* max-height: 10px; */
+  top: 2vw;  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;  
 }

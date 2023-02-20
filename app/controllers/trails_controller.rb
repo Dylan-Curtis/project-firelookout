@@ -8,4 +8,14 @@ class TrailsController < ApplicationController
         trail = Trail.find(params[:id])
         render json: trail
     end
+
+    def create 
+        trail = Trail.create!(trail_params)
+         render json:  trail, status: :created
+     end 
+     
+     private 
+     def trail_params
+         params.permit(:name, :elevation_gain, :length, :body, :location, :image, :map )
+     end
 end

@@ -4,13 +4,13 @@ class UsersController < ApplicationController
 
     def create
        user = User.create!(user_params)
-       sessions[:user_id] = user.id
+       session[:user_id] = user.id
        render json: user, status: :created
     end      
 
     def destroy
         @user.delete() 
-        head :no_content
+        head :no_content, status: 204
     end
 
     def update

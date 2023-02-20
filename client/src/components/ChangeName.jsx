@@ -27,7 +27,7 @@ function ChangeName({ onLogin, setErrors, user }) {
 
     return (
         <form onSubmit={handleSubmit}>          
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Change Name</label>
             <input
               type="text"
               id="name"

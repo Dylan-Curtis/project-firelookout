@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import {Link} from 'react-router-dom'
+import {useState} from 'react'
+import LookoutLogo from '../images/LookoutLogo.png'
 function LoginForm({ onLogin, setErrors, errors }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -21,26 +23,34 @@ function LoginForm({ onLogin, setErrors, errors }) {
           });
         }
         return (
-            <form onSubmit={handleSubmit}>
+          <>
+        
+            <form onSubmit={handleSubmit} class= "form">
+            <img  className="lookoutImageForm" alt="lookoutLogo" src={LookoutLogo}></img>
+              <div class="title">Welcome Back!</div>
              
-                <label htmlFor="email">Email</label>
+                {/* <label htmlFor="email">Email</label> */}
                 <input
                   type="text"
                   id="email"
                   autoComplete="off"
+                  class="input-container"
                   value={email}
+                  placeholder="Email Address"
                   onChange={(e) => setEmail(e.target.value)}
-                />
+                /> <div class="cut cut-short"></div>
             
              
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password"></label>
                 <input
                   type="password"
                   id="password"
+                  class="input-container"
                   autoComplete="current-password"
                   value={password}
+                  placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
-                />
+                /> <div class="cut cut-short"></div>
                       
              
                 {errors && errors.map((err) => (
@@ -48,8 +58,10 @@ function LoginForm({ onLogin, setErrors, errors }) {
                     {err}
                     </p>
                 ))}
-                <button type="submit">Submit</button>
+                <button type="submit" class="submit">Submit</button>
+                <div class="subtitle">Don't Have an Account?<Link to="signup"> Sign Up!</Link></div>
             </form>
+            </>
           );
         }
         
