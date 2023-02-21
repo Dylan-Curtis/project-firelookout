@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    # before_action :find_user, only: [:login]
+    # before_action :find_user, only: [:destroy]
     skip_before_action :authorized_user, only: [:create]
 
     def create
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end      
 
     def destroy
-        @user.delete() 
+        @user.delete()
         head :no_content, status: 204
     end
 

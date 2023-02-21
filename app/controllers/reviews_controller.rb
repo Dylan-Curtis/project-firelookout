@@ -1,4 +1,4 @@
-class ReviewsController < ApplicationController
+class ReviewsController < ApplicationCont
     def create 
        review = Review.create!(review_params)
         render json:  review, status: :created

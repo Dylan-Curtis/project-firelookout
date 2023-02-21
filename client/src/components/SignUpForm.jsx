@@ -33,7 +33,8 @@ function SignUpForm({ setUser, setErrors }) {
          }
          else {
           r.json()
-          .then(error=>  setErrors(error.errors))
+          .then(error=>  console.log(error.errors))
+          // .then(error=>  setErrors(error.errors))
          }
         })
           
@@ -77,7 +78,7 @@ function SignUpForm({ setUser, setErrors }) {
             />     
            
             <button type="submit" class="submit" >Submit</button>
-            <div class="subtitle">Have An Account Already? <Link to="login"> Log In!</Link></div>
+            <div class="subtitle">Have An Account Already? <Link to="/login"> Log In!</Link></div>
         </form>
             
             )

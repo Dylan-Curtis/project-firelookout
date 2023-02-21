@@ -62,13 +62,13 @@ function AddTrailForm({ onAddTrail }) {
             <h1 class="title">Create A Trail</h1>
             
             <input type="text"
-                   name="trailName"                    
+                   name="name"                    
                    placeholder="Trail Name"                     
                    class="input-container"
                    onChange={handleChange}               
                 />
                  <input type="text"
-                   name="Elevation Gain"                    
+                   name="elevation_gain"                    
                    placeholder="Elevation Gain in feet"                   
                    class="input-container"
                    onChange={handleChange}                     
@@ -92,7 +92,7 @@ function AddTrailForm({ onAddTrail }) {
                    onChange={handleChange}                      
                 />
                      <input type="text"
-                   name="imap"       
+                   name="map"       
                    class="input-container"             
                    placeholder="Enter the map's URL"                   
                    onChange={handleChange}                      

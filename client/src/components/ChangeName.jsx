@@ -20,7 +20,10 @@ function ChangeName({ onLogin, setErrors, user }) {
           if (r.ok) {
             r.json().then((user) =>  onLogin(user));
           } else {
-            r.json().then((err) => setErrors(err.error));
+            
+            r.json().then((err) =>
+            console.log(err.error));
+            //  setErrors(err.error));
           }
         });
       }

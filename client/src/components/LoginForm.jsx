@@ -1,10 +1,12 @@
 import {Link} from 'react-router-dom'
 import {useState} from 'react'
 import LookoutLogo from '../images/LookoutLogo.png'
+import { useNavigate } from "react-router-dom";
 function LoginForm({ onLogin, setErrors, errors }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     // const [errors, setErrors] = useState([]);
+    const navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();       
@@ -17,6 +19,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
         }).then((r) => {           
             if (r.ok) {
               r.json().then((user) => onLogin(user));
+              navigate("/");   
             } else {
               r.json().then((err) => setErrors(err.error));
             }
@@ -59,7 +62,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
                     </p>
                 ))}
                 <button type="submit" class="submit">Submit</button>
-                <div class="subtitle">Don't Have an Account?<Link to="signup"> Sign Up!</Link></div>
+                <div class="subtitle">Don't Have an Account?<Link to="/signup"> Sign Up!</Link></div>
             </form>
             </>
           );
