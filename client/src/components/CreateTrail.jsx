@@ -63,44 +63,38 @@ function AddTrailForm({ onAddTrail }) {
             
             <input type="text"
                    name="trailName"                    
-                   placeholder="Trail Name"
-                   className="input-text"    
+                   placeholder="Trail Name"                     
                    class="input-container"
                    onChange={handleChange}               
                 />
                  <input type="text"
                    name="Elevation Gain"                    
-                   placeholder="Elevation Gain in feet"
-                   className="input-text" 
+                   placeholder="Elevation Gain in feet"                   
                    class="input-container"
                    onChange={handleChange}                     
                 />
                  <input type="text"
                    name="length"   
                    class="input-container"                 
-                   placeholder="Enter length in miles"
-                   className="input-text"
+                   placeholder="Enter length in miles"                  
                    onChange={handleChange}                       
                 />
                  <input type="text"
                    name="location"   
                    class="input-container"                 
-                   placeholder="Enter the general reagion of the hike"
-                   className="input-text"
+                   placeholder="Location"                   
                    onChange={handleChange}                      
                 />
                    <input type="text"
                    name="image"     
                    class="input-container"               
-                   placeholder="image URL"
-                   className="input-text"
+                   placeholder="image URL"                   
                    onChange={handleChange}                      
                 />
                      <input type="text"
                    name="imap"       
                    class="input-container"             
-                   placeholder="Enter the map's URL"
-                   className="input-text"
+                   placeholder="Enter the map's URL"                   
                    onChange={handleChange}                      
                 />
                 <button class="submit"> Save New Trail</button>

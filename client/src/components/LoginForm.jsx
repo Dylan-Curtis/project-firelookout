@@ -38,7 +38,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
                   value={email}
                   placeholder="Email Address"
                   onChange={(e) => setEmail(e.target.value)}
-                /> <div class="cut cut-short"></div>
+                /> 
             
              
                 <label htmlFor="password"></label>
@@ -50,7 +50,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
                   value={password}
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
-                /> <div class="cut cut-short"></div>
+                /> 
                       
              
                 {errors && errors.map((err) => (

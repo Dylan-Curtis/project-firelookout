@@ -1,14 +1,15 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import TrailCard from './TrailCard'
 import LoginForm from './LoginForm'
 import SignUpForm from './SignUpForm'
 import ChangeName from './ChangeName'
 import CreateTrail from './CreateTrail'
 
+
 // import Header from './components/Header'
 
 function Dashboard({user, setUser, setErrors, setTrails, errors, trails}) {
-    
+  const [showTrailForm, setShowTrailForm] = useState(false)
 
     useEffect(()=> {
       const fetchUser = async () =>{        
@@ -46,16 +47,21 @@ else{
     setTrails(currentTrails =>[...currentTrails, newTrail]);
   } 
   
-    if (!user) return <span>  <SignUpForm setUser={setUser} errors = {errors} setErrors={setErrors} user={user} /> <LoginForm onLogin={setUser} errors ={errors} setErrors={setErrors} user={user} /></span>    
+  function handleClick() {
+    setShowTrailForm((showTrailForm) => !showTrailForm);
+  }
+    if (!user) return <span className="comboForm">  <SignUpForm setUser={setUser} errors = {errors} setErrors={setErrors} user={user} /> <LoginForm onLogin={setUser} errors ={errors} setErrors={setErrors} user={user} /></span>    
     
     
 
     const trailCards = trails && trails.map(trail => <TrailCard key={trail.id} trail={trail} />)
   
     return (
-        <>         
+        <> 
+        {showTrailForm ? <CreateTrail onAddTrail={onAddTrail} /> : null}
+        <button onClick={handleClick}>{!showTrailForm ? "Add a Trail" : "Hide Form"}</button>        
          <div className="trailList">
-          <CreateTrail onAddTrail={onAddTrail} />
+         
          <ChangeName onLogin={setUser} errors ={errors} setErrors={setErrors} user={user}/>
           {trailCards}
           

@@ -7,7 +7,7 @@ function TrailCard({trail}){
     //   };
 
 return(
-    <div className="TrailCard">
+    < div className="TrailCard">
         <img src={trail.image} alt={trail.name} className="trail-image" />
         <p className="trail-name">{trail.name}</p>
         <p className="hiking-des">Length:{trail.length} mi ~ </p>

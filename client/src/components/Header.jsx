@@ -46,7 +46,7 @@ const deleteUser  = (e)=>{
                 {/* <button type="submit" onClick={logout}>Signout</button> */} 
                 {/* <Link to="signout">Sign Out</Link>                    */}
                 {/* <Link to="trails">Trails</Link> */}
-                { user ? `Hello, ${user.name}`: <div><Link to="login"><button className = "logInButton">Login</button></Link> <Link to="signup"><button className = "signupButton">Sign Up</button></Link> </div>}
+                { user ? <h1 className= "userInfoHeader">Hello, {user.name}</h1>: <div><Link to="login" ><button className = "logInButton">Login</button></Link> <Link to="signup"><button className = "signupButton">Sign Up</button></Link> </div>}
                 </h1>
             </h1>
         </nav>
