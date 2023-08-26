@@ -3,7 +3,7 @@ import LookoutLogo from '../images/LookoutLogo.png'
 import {Link} from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
-function SignUpForm({ setUser, setErrors }) {
+function SignUpForm({ setUser, setErrors, errors }) {
     const [password, setPassword] = useState("");  
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -32,16 +32,10 @@ function SignUpForm({ setUser, setErrors }) {
           })
          }
          else {
-          r.json()
-          .then(error=>  console.log(error.errors))
-          // .then(error=>  setErrors(error.errors))
-         }
+          r.json().then((err) => setErrors([err.error]));
+        }
         })
-          
-          // else {
-          //   r.json().then((err) => setErrors(err.error));
-          // }
-        };
+        };   
       
 
     return (
@@ -79,6 +73,11 @@ function SignUpForm({ setUser, setErrors }) {
            
             <button type="submit" class="submit" >Submit</button>
             <div class="subtitle">Have An Account Already? <Link to="/login"> Log In!</Link></div>
+            {errors && errors.map((err) => (
+                    <p key={err} style={{ color: "red" }}>
+                    {err}
+                    </p> 
+            ))}
         </form>
             
             )

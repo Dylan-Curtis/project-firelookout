@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import TrailCard from './TrailCard'
-import LoginForm from './LoginForm'
+// import LoginForm from './LoginForm'
 import SignUpForm from './SignUpForm'
 import ChangeName from './ChangeName'
 import CreateTrail from './CreateTrail'

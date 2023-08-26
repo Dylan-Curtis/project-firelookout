@@ -30,6 +30,13 @@ function LoginForm({ onLogin, setErrors, errors }) {
         
             <form onSubmit={handleSubmit} class= "form">
             <img  className="lookoutImageForm" alt="lookoutLogo" src={LookoutLogo}></img>
+
+               {errors &&
+            errors.map((err) => (
+              <p key={err} style={{ color: 'red' }}>
+                {err}
+              </p>
+            ))}
               <div class="title">Welcome Back!</div>
              
                 {/* <label htmlFor="email">Email</label> */}
@@ -63,6 +70,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
                 ))}
                 <button type="submit" class="submit">Submit</button>
                 <div class="subtitle">Don't Have an Account?<Link to="/signup"> Sign Up!</Link></div>
+              
             </form>
             </>
           );
