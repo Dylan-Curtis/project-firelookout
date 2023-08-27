@@ -32,7 +32,7 @@ function SignUpForm({ setUser, setErrors, errors }) {
           })
          }
          else {
-          r.json().then((err) => setErrors([err.error]));
+          r.json().then((err) => setErrors([err.errors]));
         }
         })
         };   
@@ -41,6 +41,11 @@ function SignUpForm({ setUser, setErrors, errors }) {
     return (
         <form onSubmit={handleSubmit} class= "form">   
         <img  className="lookoutImageForm" alt="lookoutLogo" src={LookoutLogo}></img>
+        {errors && errors.map((err) => (
+                    <p key={err} style={{ color: "red" }}>
+                    {err}
+                    </p> 
+            ))}
         <div class="title">Sign Up To Plan Your Next Hike!</div>       
             <label htmlFor="name"></label>
             <input
@@ -73,11 +78,7 @@ function SignUpForm({ setUser, setErrors, errors }) {
            
             <button type="submit" class="submit" >Submit</button>
             <div class="subtitle">Have An Account Already? <Link to="/login"> Log In!</Link></div>
-            {errors && errors.map((err) => (
-                    <p key={err} style={{ color: "red" }}>
-                    {err}
-                    </p> 
-            ))}
+           
         </form>
             
             )

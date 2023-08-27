@@ -21,7 +21,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
               r.json().then((user) => onLogin(user));
               navigate("/");   
             } else {
-              r.json().then((err) => setErrors(err.error));
+              r.json().then((err) => setErrors([err.error]));             
             }
           });
         }
@@ -60,14 +60,9 @@ function LoginForm({ onLogin, setErrors, errors }) {
                   value={password}
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
-                /> 
-                      
+                />                       
              
-                {errors && errors.map((err) => (
-                    <p key={err} style={{ color: "red" }}>
-                    {err}
-                    </p>
-                ))}
+             
                 <button type="submit" class="submit">Submit</button>
                 <div class="subtitle">Don't Have an Account?<Link to="/signup"> Sign Up!</Link></div>
               
