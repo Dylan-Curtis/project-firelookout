@@ -33,6 +33,10 @@ function SignUpForm({ setUser, setErrors, errors }) {
          }
          else {
           r.json().then((err) => setErrors([err.errors]));
+          
+          setTimeout(() => {
+            setErrors([]);
+          }, 5000);
         }
         })
         };   

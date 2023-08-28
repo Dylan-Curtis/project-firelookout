@@ -23,6 +23,10 @@ function LoginForm({ onLogin, setErrors, errors }) {
             } else {
               r.json().then((err) => setErrors([err.error]));             
             }
+
+            setTimeout(() => {
+              setErrors([]);
+            }, 5000);
           });
         }
         return (
