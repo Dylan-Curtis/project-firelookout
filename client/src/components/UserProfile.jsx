@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 function UserStatPage({user, setBackground}) {
   
   const [stats, setStats] = useState({}); 
-  setBackground("App-background2")  
+//   setBackground("App-background2")  
   useEffect(() => {
     async function fetchStats() {
       const response = await fetch(`/scores`);

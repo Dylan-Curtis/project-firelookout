@@ -24,7 +24,7 @@ function Header({ setErrors, setUser, user}) {
                
                 {/* <Link to="signout">Sign Out</Link>                    */}
                 {/* <Link to="trails">Trails</Link> */}
-                { user ? <h1 className= "userInfoHeader">Hello, {user.name}</h1>: <div><Link to="login" ><button className = "logInButton">Login</button></Link> <Link to="signup"><button className = "signupButton">Sign Up</button></Link> </div>}
+                { user ?  <Link to="/user" className="userInfoHeader">Hello, {user.name}</Link>: <div><Link to="login" ><button className = "logInButton">Login</button></Link> <Link to="signup"><button className = "signupButton">Sign Up</button></Link> </div>}
                 </h1>
             </h1>
         </nav>

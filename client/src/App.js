@@ -11,6 +11,7 @@ import SignUpForm from './components/SignUpForm';
 import LoginForm from './components/LoginForm';
 import TrailReviewForm from './components/TrailReviewForm';
 import CreateTrail from './components/CreateTrail';
+import UserProfile from './components/UserProfile';
 
 function App() {
   const [trails, setTrails] = useState(null)
@@ -28,6 +29,7 @@ function App() {
             <Route path="/login" element= {<LoginForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>} /> 
             <Route path="/trail-review" element= {<TrailReviewForm  errors = {errors} setErrors={setErrors} user={user} />} /> 
             <Route path="/create-trail" element= {<CreateTrail  errors = {errors} setErrors={setErrors} user={user} />} /> 
+            <Route path="/user" element= {<UserProfile  errors = {errors} setErrors={setErrors} user={user} />} /> 
 
             {/* <Route path= element={<LoginForm />}/>    */}
          </Routes>
