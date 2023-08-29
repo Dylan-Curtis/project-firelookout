@@ -85,7 +85,7 @@ else{
     return (
         <> 
         {showTrailForm ? <CreateTrail onAddTrail={onAddTrail} /> : null}
-        <button onClick={handleClick}>{!showTrailForm ? "Add a Trail" : "Hide Form"}</button>        
+        {/* <button onClick={handleClick}>{!showTrailForm ? "Add a Trail" : "Hide Form"}</button>         */}
          <div className="trailList">
          
          <ChangeName onLogin={setUser} errors ={errors} setErrors={setErrors} user={user}/>

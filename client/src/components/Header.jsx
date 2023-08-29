@@ -15,7 +15,7 @@ function Header({ setErrors, setUser, user}) {
                 <img  className="lookoutImage" alt="lookoutLogo" src={LookoutLogo}></img>
                 <h1 className="LookoutTrails"><strong>Lookout Trails</strong></h1>
                 <Link to="/" className="HikeATrail"> <strong>Hike a Trail</strong></Link>
-                <Link to="/" className="CreateATrail"> <strong> Create a Trail</strong></Link>
+                <Link to="/create-trail" className="CreateATrail"> <strong> Create a Trail</strong></Link>
                
                 {/* <Link to="user"> User </Link>
                 {/* <Link to="myTrails">My Trails</Link>                 */}
