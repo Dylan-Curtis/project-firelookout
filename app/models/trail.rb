@@ -1,6 +1,7 @@
 class Trail < ApplicationRecord
-    validates :name, uniqueness: true
-    has_many :reviews
+    validates :elevation_gain, :name, :length, :body, :location, :map presence: true
+    has_many :review_trails
+    has_many :reviews, through: :review_trails   
     
-    # validates :elevation_gain, :name, :length, :body, :location, :image, :map presence: true
+    
 end
