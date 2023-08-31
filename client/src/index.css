@@ -1,3 +1,8 @@
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family:  'Poppins';
@@ -8,12 +13,13 @@ body {
 code {
   font-family: 'Poppins';
 }
+
 #links {
   background-color: whitesmoke;
   /* border: 1rem rgba(182, 235, 184, 0.692) solid; */
   /* text-align: center; */
-  justify-content: space-around;
-
+  /* justify-content: space-around; */
+  text-decoration: none; /* Remove underlines */
   
 }
 .comboForm{
@@ -94,31 +100,100 @@ white-space: nowrap;
 
 .lookoutImage{
   /* max-height: 10px; */
-  top: 2vw;
+  top: 0.5vw;
   position: absolute;
   object-position : left;
  
 }
 
 .LookoutTrails{
-  font-family: 'Poppins';
-  font-size: 35px;
-  color : #F3C831;
-  top: 15px;
-  left: 15vw;
-  position: absolute;
+
+position: absolute;
+width: 295px;
+height: 53px;
+left: 196px;
+top: 23px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 35px;
+line-height: 52px;
+/* identical to box height */
+
+color: #F3C831;
+
+
 }
+
+.LookoutTrails-footer{
+/* LOOKOUT TRAILS */
+
+/* position: absolute;
+width: 295px;
+height: 53px;
+left: 273px;
+top: 23px; */
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 35px;
+line-height: 52px;
+/* identical to box height */
+
+color: #F3C831;
+
+
+  }
 .HikeATrail{
-  position: absolute;
+  /* position: absolute;
   font-size: 20px;
   left: 39vw;
   font-family: 'Poppins';
+  text-decoration: none; */
+  /* Hike a Trail */
+
+position: absolute;
+width: 128px;
+height: 21px;
+left: 512px;
+top: 40px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 22px;
+display: flex;
+align-items: center;
+text-align: center;
+text-decoration: none;
+color: #FFFFFF;
+
 }
+
 .CreateATrail{
-  position: absolute;
-  font-size: 20px;
-  left: 50vw;
-  font-family: 'Poppins';
+  /* Create a Trail */
+
+position: absolute;
+width: 125px;
+height: 21px;
+left: 654px;
+top: 40px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 22px;
+display: flex;
+align-items: center;
+text-align: center;
+text-decoration: none;
+color: #FFFFFF;
+
+
 }
 
 .headImage{
@@ -134,15 +209,31 @@ height: auto;
   top: 0px;
   background-color: #F3C831;
 }
+
 .signupButton{
   position: absolute;
   width: 75px;
   height: 21px;
   left: 85vw;
   top: 0px;
-  background-color: #748A76;
+  background-color: #748A76; 
+
+background: #F3C831;
+border-radius: 30px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 10px;
+line-height: 15px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #4C6251;
+
 }
-/* CSS */
+
 .signupButton{
   align-items: center;
   appearance: none;
@@ -179,7 +270,7 @@ height: auto;
 
 .signupButton:hover {
   background: #FFFFFF;
-  color: #F3C831;
+  color: black;
 }
 
 .signupButton:active {

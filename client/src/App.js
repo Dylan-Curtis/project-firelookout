@@ -1,12 +1,9 @@
 import { Routes, Route} from 'react-router-dom'
 import React, {useState} from 'react'
-// import { Switch } from "react-router"
-
-
-// import Header from './components/Header'
 import Dashboard from './components/Dashboard'
 import './App.css';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import SignUpForm from './components/SignUpForm';
 import LoginForm from './components/LoginForm';
 import TrailReviewForm from './components/TrailReviewForm';
@@ -33,8 +30,10 @@ function App() {
 
             {/* <Route path= element={<LoginForm />}/>    */}
          </Routes>
+         
         {/* </Switch> */}
       </main>  
+      <Footer/>
     </div>
   )
 }
