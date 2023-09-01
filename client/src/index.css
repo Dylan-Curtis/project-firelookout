@@ -42,17 +42,30 @@ code {
   bottom: 0
 }
 
+.lookoutImageFooter{
+
+position: absolute;
+width: auto;
+height: auto;
+left: 46px;
+
+background:transparent;
+
+
+}
+
+
 .foot {
   padding-left: 0px;  
   border: 0;
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: #748A76;  
-  padding: 10px;
+  background: #4C6251;  
+  /* padding: 10px; */
   bottom: 0; 
   width: 100%;
-  height: 5vw;
+  height: 175px;
   margin-top: 30px;
 }
 .TrailCard {
