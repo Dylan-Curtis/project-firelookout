@@ -8,6 +8,8 @@ body {
   font-family:  'Poppins';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
 }
 
 code {
@@ -37,7 +39,7 @@ code {
   background: #748A76;  
   padding: 30px;
   height: 2vw; 
-  
+  bottom: 0
 }
 
 .foot {
@@ -47,9 +49,11 @@ code {
   font-size: 100%;
   vertical-align: baseline;
   background: #748A76;  
-  padding: 30px;
-  height: 2vw; 
-  
+  padding: 10px;
+  bottom: 0; 
+  width: 100%;
+  height: 5vw;
+  margin-top: 30px;
 }
 .TrailCard {
   text-align: center;
@@ -139,13 +143,11 @@ color: #F3C831;
 }
 
 .LookoutTrails-footer{
-/* LOOKOUT TRAILS */
 
-position: absolute;
+/* position: absolute;
 width: 295px;
 height: 53px;
-left: 273px;
-top: 80vw;
+left: 273px; */
 
 font-family: 'Poppins';
 font-style: normal;
@@ -154,15 +156,59 @@ font-size: 35px;
 line-height: 52px;
 
 color: #F3C831;
-
   }
-.HikeATrail{
+
+ .HikeATrail-footer{
+
+/* position: absolute;
+width: 128px;
+height: 21px;
+left: 273px; */
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 22px;
+display: flex;
+align-items: center;
+
+color: #EBEEEA;
+
+ } 
+
+ .footer-links {
+  position: absolute;
+  width: 295px;
+  height: 53px;
+  left: 273px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+ .CreateATrail-footer{
+
   /* position: absolute;
-  font-size: 20px;
-  left: 39vw;
+  width: 128px;
+  height: 21px;
+  left: 273px;
+  top: 103px;
+  bottom:40vw; */
+  
   font-family: 'Poppins';
-  text-decoration: none; */
-  /* Hike a Trail */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  
+  color: #EBEEEA;
+  
+  }
+
+.HikeATrail{
 
 position: absolute;
 width: 128px;
@@ -184,7 +230,6 @@ color: #FFFFFF;
 }
 
 .CreateATrail{
-  /* Create a Trail */
 
 position: absolute;
 width: 125px;
@@ -202,7 +247,6 @@ align-items: center;
 text-align: center;
 text-decoration: none;
 color: #FFFFFF;
-
 
 }
 
