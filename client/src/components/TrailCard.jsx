@@ -15,8 +15,10 @@ function TrailCard({ trail }) {
           {liked ? "❤️" : "🤍"}
         </button>
       </div>
-      <span className="trail-name">{trail.name}
-       - Length: {trail.length} mi ~ </span>
+      <div className="trail-details">
+        <h3 className="trail-name">{trail.name}</h3>
+        <span className="trail-length"> {trail.length} mi</span>
+      </div>
       <h3>
         {trail.reviews.map((review, index) => (
           <div key={index}>
