@@ -16,7 +16,9 @@ function TrailCard({ trail }) {
         </button>
       </div>
       <div className="trail-details">
-        <h3 className="trail-name">{trail.name}</h3>
+        <h3 className="trail-name">
+          {trail.name} {trail.average_rating ? trail.average_rating : "N/A"} {/* Display average rating if available */}
+        </h3>
         <span className="trail-length"> {trail.length} mi</span>
       </div>
       <h3>

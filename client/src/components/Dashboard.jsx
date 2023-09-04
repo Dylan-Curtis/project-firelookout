@@ -1,40 +1,68 @@
-import React, {useEffect, useState} from 'react'
-import TrailCard from './TrailCard'
-import SignUpForm from './SignUpForm'
-import ChangeName from './ChangeName'
-import CreateTrail from './CreateTrail'
+import React, { useEffect, useState } from 'react';
+import TrailCard from './TrailCard';
+import SignUpForm from './SignUpForm';
+import ChangeName from './ChangeName';
+import CreateTrail from './CreateTrail';
 
-function Dashboard({user, setUser, setErrors, setTrails, errors, trails}) {
+function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
+  useEffect(() => {
+    const fetchUser = async () => {
+      const response = await fetch('authorized_user');
+      if (response.ok) {
+        const user = await response.json();
+        setUser(user);
+      } else {
+        const error = await response.json();
+        setErrors(error);
+      }
+    };
 
-    useEffect(()=> {
-      const fetchUser = async () =>{        
-        const response = await fetch('authorized_user')
-        if (response.ok){
-        const user = await response.json() 
-        setUser(user)
-      }
-else{
-  const error = response.json()
-}
-      }
-      if(!user){
-      fetchUser()}
-    },[user, setErrors, setUser])
-  
-    useEffect(() => {
-      const fetchTrails = async () => {
-        const response = await fetch('trails')
-        const trails = await response.json() 
-      setTrails(trails)
-      console.log(trails)
-      
+    if (!user) {
+      fetchUser();
     }
+  }, [user, setErrors, setUser]);
+
+  useEffect(() => {
+    const fetchTrails = async () => {
+      try {
+        const response = await fetch('trails');
+        if (response.ok) {
+          const trails = await response.json();
+          setTrails(trails);
+         
+          const fetchAverageRatings = async () => {
+            try {
+              const response = await fetch('average_ratings'); 
+              if (response.ok) {
+                const averageRatings = await response.json();
+
+                
+                const updatedTrails = trails.map((trail) => {
+                  const averageRating = averageRatings.find((rating) => rating.trailId === trail.id);
+                  return { ...trail, averageRating: averageRating ? averageRating.averageRating : 0 };
+                });
+
+                setTrails(updatedTrails);
+              }
+            } catch (error) {
+              console.error(error);
+            }
+          };
+
+          if (user) {
+            fetchAverageRatings();
+          }
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
     if (user) {
-    fetchTrails()    
-      .catch(console.error)
+      fetchTrails().catch(console.error);
     }
-     
-  }, [user, setTrails])  
+  }, [user, setTrails, setErrors]);
+
   
   const logout =( e)=>{
     e.preventDefault()
@@ -67,6 +95,8 @@ else{
       if(r.status === 204){
           setUser(null)} 
       })}
+
+      
 
     const trailCards = trails && trails.map(trail => <TrailCard key={trail.id} trail={trail} />)
   
