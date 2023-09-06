@@ -50,7 +50,7 @@ function SignUpForm({ setUser, setErrors, errors }) {
   return (
     <form onSubmit={handleSubmit} className="form">
       <img className="lookoutImageForm" alt="lookoutLogo" src={LookoutLogo} />
-      {errors && errors.map((err) => (
+      {Array.isArray(errors) && errors.map((err) => (
         <p key={err} style={{ color: "red" }}>
           {err}
         </p>

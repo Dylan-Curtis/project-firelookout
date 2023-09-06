@@ -35,7 +35,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
             <form onSubmit={handleSubmit} class= "form">
             <img  className="lookoutImageForm" alt="lookoutLogo" src={LookoutLogo}></img>
 
-               {errors &&
+               {Array.isArray(errors) &&
             errors.map((err) => (
               <p key={err} style={{ color: 'red' }}>
                 {err}

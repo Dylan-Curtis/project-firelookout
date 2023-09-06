@@ -111,10 +111,13 @@ background:transparent;
 }
 
 .trail-name {
-  color: blue; 
-  margin-bottom: 2px;
-  margin-top: 1vw;
+  overflow: hidden;
+  /* white-space: nowrap; */
+  text-overflow: wrap;
+  max-width: 200px; /* Adjust the max-width as needed */
+  white-space: initial;
 }
+
 
 .trail-length {
   color: green; 

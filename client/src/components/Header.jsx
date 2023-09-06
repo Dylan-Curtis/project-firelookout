@@ -13,7 +13,7 @@ function Header({ setErrors, setUser, user}) {
              
                 <h1 className = "nav">
                 <img  className="lookoutImage" alt="lookoutLogo" src={LookoutLogo}></img>
-                <h1 className="LookoutTrails"><strong>Lookout Trails</strong></h1>
+                <div className="LookoutTrails"><strong>Lookout Trails</strong></div>
                 <Link to="/" className="HikeATrail"> <strong>Hike a Trail</strong></Link>
                 <Link to="/create-trail" className="CreateATrail"> <strong> Create a Trail</strong></Link>         
               
