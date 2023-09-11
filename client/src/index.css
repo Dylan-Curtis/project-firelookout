@@ -65,7 +65,7 @@ background:transparent;
 }
 
 .TrailCard {
-  text-align: center;
+  text-align: left;
   border: grey solid 1px;
   padding: 0;
   width: 20rem;
@@ -111,11 +111,13 @@ background:transparent;
 }
 
 .trail-name {
-  overflow: hidden;
-  /* white-space: nowrap; */
-  text-overflow: wrap;
+   /* white-space: nowrap; */
+  text-overflow: unset;
   max-width: 200px; /* Adjust the max-width as needed */
   white-space: initial;
+  margin-top: 0.5vw;
+  justify-self: left;
+  
 }
 
 
