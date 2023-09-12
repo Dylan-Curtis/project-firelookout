@@ -67,7 +67,7 @@ background:transparent;
 .TrailCard {
   position: relative;
   text-align: left;
-  border: grey solid 1px;
+  border: none;
   padding: 0;
   width: 20rem;
   height: 25rem;
@@ -124,6 +124,7 @@ background:transparent;
 
 .trail-length {
   color: green; 
+  margin-top: 0.25rem;
 }
 
 .hiking-des{
@@ -538,4 +539,18 @@ color: #4C6251;
     position: absolute; 
     top: 16rem; 
     right: 1rem; 
+  }
+
+  .review-count{
+    position: absolute; 
+    top: 17.5rem; 
+    right: 1rem; 
+  }
+
+  .trailList {
+    display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create four equally sized columns */
+  gap: 20px; /* Adjust the gap between cards as needed */
+  justify-items: center; /* Center items horizontally within each column */
+  padding: 20px; /* Adjust the padding as needed */
   }
