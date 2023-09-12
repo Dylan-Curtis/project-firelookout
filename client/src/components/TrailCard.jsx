@@ -49,16 +49,16 @@ function TrailCard({ trail, reviews }) {
         </button>
       </div>
       <div className="trail-details">
-        <h3 className="trail-name">
-          {trail.name}
-          {reviews.length > 0 ? (
-            <span className="trail-rating">{generateStars()}</span>
-          ) : (
-            <span className="no-reviews">No Reviews</span>
-          )}
-        </h3>
-        <span className="trail-length"> {trail.length} mi</span>
-      </div>
+  <span>
+    <h3 className="trail-name">{trail.name}</h3>
+    {reviews.length > 0 ? (
+      <span className="trail-rating">{generateStars()}</span>
+    ) : (
+      <span className="no-reviews">No Reviews</span>
+    )}
+  </span>
+  <span className="trail-length"> {trail.length} mi</span>
+</div>
       <h3>
         {trail.reviews.map((review, index) => (
           <div key={index}>
