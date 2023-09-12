@@ -29,39 +29,20 @@ function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
         if (response.ok) {
           const trails = await response.json();
           setTrails(trails);
-         
-          const fetchAverageRatings = async () => {
-            try {
-              const response = await fetch('average_ratings'); 
-              if (response.ok) {
-                const averageRatings = await response.json();
-
-                
-                const updatedTrails = trails.map((trail) => {
-                  const averageRating = averageRatings.find((rating) => rating.trailId === trail.id);
-                  return { ...trail, averageRating: averageRating ? averageRating.averageRating : 0 };
-                });
-
-                setTrails(updatedTrails);
-              }
-            } catch (error) {
-              console.error(error);
-            }
-          };
-
-          if (user) {
-            fetchAverageRatings();
-          }
         }
       } catch (error) {
         console.error(error);
       }
     };
-
+  
     if (user) {
       fetchTrails().catch(console.error);
     }
-  }, [user, setTrails, setErrors]);
+  }, [user, setTrails, setErrors]);  
+
+  useEffect(() => {
+    console.log(trails);
+  }, [trails]);
 
   
   const logout =( e)=>{
@@ -98,7 +79,7 @@ function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
 
       
 
-    const trailCards = trails && trails.map(trail => <TrailCard key={trail.id} trail={trail} />)
+    const trailCards = trails && trails.map(trail => <TrailCard key={trail.id} trail={trail} reviews={trail.reviews} />)
   
     return (
         <>         

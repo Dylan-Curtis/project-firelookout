@@ -1,7 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-function TrailCard({ trail }) {
+function TrailCard({ trail, reviews }) {
   const [liked, setLiked] = useState(false);
+  const [averageRating, setAverageRating] = useState(null);
+
+  useEffect(() => {
+    // Calculate the average rating when reviews change
+    if (reviews && reviews.length > 0) {
+      const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
+      const avg = totalRating / reviews.length;
+      setAverageRating(avg);
+    }
+  }, [reviews]);
 
   const handleLike = () => {
     setLiked(!liked);
@@ -17,7 +27,7 @@ function TrailCard({ trail }) {
       </div>
       <div className="trail-details">
         <h3 className="trail-name">
-          {trail.name} {trail.average_rating ? trail.average_rating : "N/A"} {/* Display average rating if available */}
+          {trail.name} {averageRating ? `Average Rating: ${averageRating.toFixed(2)}` : "N/A"}
         </h3>
         <span className="trail-length"> {trail.length} mi</span>
       </div>
