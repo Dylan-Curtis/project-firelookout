@@ -3,6 +3,7 @@ import TrailCard from './TrailCard';
 import SignUpForm from './SignUpForm';
 import ChangeName from './ChangeName';
 import CreateTrail from './CreateTrail';
+import HeadImage from '../images/HeadImage.png'
 
 function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
   useEffect(() => {
@@ -82,17 +83,19 @@ function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
     const trailCards = trails && trails.map(trail => <TrailCard key={trail.id} trail={trail} reviews={trail.reviews} />)
   
     return (
-        <>         
+
+        <>     
+        <img className="headImage"src={HeadImage} alt="lookoutimg"></img>    
          <div className="trailList">
-         
-         <ChangeName onLogin={setUser} errors ={errors} setErrors={setErrors} user={user}/>
+{/*          
+         <ChangeName onLogin={setUser} errors ={errors} setErrors={setErrors} user={user}/> */}
           {trailCards}
           
         </div>
         
             
-        {user ?  <button type="submit" onClick={logout}>Signout</button> : null}
-        { user ? <button onClick={deleteUser}>DeleteUser</button>:""  }   
+        {/* {user ?  <button type="submit" onClick={logout}>Signout</button> : null}
+        { user ? <button onClick={deleteUser}>DeleteUser</button>:""  }    */}
              
         </>
         )

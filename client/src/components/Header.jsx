@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import HeadImage from '../images/HeadImage.png'
+
 import LookoutLogo from '../images/LookoutLogo.png'
 
 function Header({ setErrors, setUser, user}) {  
@@ -21,7 +21,7 @@ function Header({ setErrors, setUser, user}) {
                 </h1>
             </h1>
         </nav>
-        <img className="headImage"src={HeadImage} alt="lookoutimg"></img>
+        
         </div>
       )
     

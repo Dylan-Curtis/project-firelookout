@@ -1,5 +1,6 @@
 import { useState } from "react";
 import LookoutLogo from '../images/LookoutLogo.png'
+import SignInBackground from '../images/SignInBackground.png'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
@@ -8,6 +9,18 @@ function SignUpForm({ setUser, setErrors, errors }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
+
+  const backgroundStyle = {
+    backgroundImage: `url(${SignInBackground})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    minHeight: '100vh', // Ensure the container takes up the entire viewport height
+    display: 'flex',
+    alignItems: 'center', // Vertically center the form
+    justifyContent: 'center', // Horizontally center the form
+    padding: '20px', // Add some padding around the form
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -48,6 +61,7 @@ function SignUpForm({ setUser, setErrors, errors }) {
   }
 
   return (
+    <div className="container" style={backgroundStyle}>     
     <form onSubmit={handleSubmit} className="form">
       <img className="lookoutImageForm" alt="lookoutLogo" src={LookoutLogo} />
       {Array.isArray(errors) && errors.map((err) => (
@@ -86,6 +100,7 @@ function SignUpForm({ setUser, setErrors, errors }) {
       <button type="submit" className="submit">Submit</button>
       <div className="subtitle">Have An Account Already? <Link to="/login"> Log In!</Link></div>
     </form>
+    </div>
   );
 }
 
