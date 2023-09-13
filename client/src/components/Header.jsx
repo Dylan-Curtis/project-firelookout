@@ -9,8 +9,7 @@ function Header({ setErrors, setUser, user}) {
     return (
         <div>        
         <nav>
-            <h1 id="links">             
-             
+            <h1 id="links"> 
                 <h1 className = "nav">
                 <img  className="lookoutImage" alt="lookoutLogo" src={LookoutLogo}></img>
                 <div className="LookoutTrails"><strong>Lookout Trails</strong></div>

@@ -6,7 +6,7 @@ function Footer({user} ) {
 
 
     return (
-        <footer >  
+        <footer id="links">  
         <h1 className= "foot">
         <img  className="lookoutImageFooter" alt="lookoutLogo" src={FootImage}></img>
         <div className="footer-links">

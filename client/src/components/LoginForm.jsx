@@ -2,11 +2,23 @@ import {Link} from 'react-router-dom'
 import {useState} from 'react'
 import LookoutLogo from '../images/LookoutLogo.png'
 import { useNavigate } from "react-router-dom";
+import SignInBackground from '../images/SignInBackground.png'
 function LoginForm({ onLogin, setErrors, errors }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    // const [errors, setErrors] = useState([]);
     const navigate = useNavigate();
+
+    const backgroundStyle = {
+      backgroundImage: `url(${SignInBackground})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      minHeight: '100vh', // Ensure the container takes up the entire viewport height
+      display: 'flex',
+      alignItems: 'center', // Vertically center the form
+      justifyContent: 'center', // Horizontally center the form
+      padding: '20px', // Add some padding around the form
+    };
 
     function handleSubmit(e) {
         e.preventDefault();       
@@ -30,7 +42,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
           });
         }
         return (
-          <>
+          <div className="container" style={backgroundStyle}>
         
             <form onSubmit={handleSubmit} class= "form">
             <img  className="lookoutImageForm" alt="lookoutLogo" src={LookoutLogo}></img>
@@ -71,7 +83,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
                 <div class="subtitle">Don't Have an Account?<Link to="/signup"> Sign Up!</Link></div>
               
             </form>
-            </>
+            </div>
           );
         }
         
