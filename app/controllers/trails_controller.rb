@@ -7,19 +7,17 @@ class TrailsController < ApplicationController
     end
   
     def show
-      render json: @trail
+      average = calculate_average_rating(@trail)
+      reviews = @trail.reviews # Fetch associated reviews
+      render json: { trail: @trail, average_rating: average, reviews: reviews }
     end
+    
   
     def create
       trail = Trail.create!(trail_params)
       render json: trail, status: :created
     end
-  
-    def average_rating
-      average = calculate_average_rating(@trail)
-      render json: { trail: @trail, average_rating: average }
-    end
-  
+ 
     def num_ratings
       num_reviews = @trail.reviews.count
       render json: { trail: @trail, num_ratings: num_reviews }
@@ -33,6 +31,11 @@ class TrailsController < ApplicationController
   
     def find_trail
       @trail = Trail.find(params[:id])
+    end
+
+   def average_rating
+  average = calculate_average_rating(@trail)
+  render json: { trail: @trail, average_rating: average }
     end
   
     def calculate_average_rating(trail)

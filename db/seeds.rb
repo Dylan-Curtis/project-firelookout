@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Trail.destroy_all
 Review.destroy_all
@@ -98,14 +91,19 @@ map: "https://static-maps.alltrails.com/production/at-map/72531622/v1-trail-us-w
 
 
   ]  )
+  puts "Seeding reviews "
 
-puts "seeding reviews"
-20.times {Review.create(body: Faker::Lorem.paragraph(sentence_count: 2...4),
-   condition: (['Good', 'Bad', 'Normal', 'Snowy', 'Washed Out'].sample),
-#    photo: faker.image.nature(),
-   rating: Faker::Number.between(from: 1, to: 5),
-   trail: Trail.all.sample,
-   user: User.all.sample)}
-
-
-puts "all seeded"
+  20.times do
+    user = User.all.sample
+    trail = Trail.all.sample
+  
+    review = Review.create(
+      body: Faker::Lorem.paragraph(sentence_count: 2...4),
+      condition: ['Good', 'Bad', 'Normal', 'Snowy', 'Washed Out'].sample,
+      rating: Faker::Number.between(from: 1, to: 5),
+      user: user,
+      trail: trail  # Associate the review with a trail using the new trail_id column
+    )
+  end
+  
+  puts "All seeded"

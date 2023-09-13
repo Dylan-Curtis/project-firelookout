@@ -10,22 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_30_211918) do
-
-  create_table "review_trails", force: :cascade do |t|
-    t.integer "review_id", null: false
-    t.integer "trail_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["review_id"], name: "index_review_trails_on_review_id"
-    t.index ["trail_id"], name: "index_review_trails_on_trail_id"
-  end
+ActiveRecord::Schema.define(version: 2023_02_14_215658) do
 
   create_table "reviews", force: :cascade do |t|
-    t.string "body"
+    t.text "body"
     t.string "condition"
     t.integer "rating"
-    t.text "content"
     t.integer "trail_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -56,8 +46,6 @@ ActiveRecord::Schema.define(version: 2023_08_30_211918) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "review_trails", "reviews"
-  add_foreign_key "review_trails", "trails"
   add_foreign_key "reviews", "trails"
   add_foreign_key "reviews", "users"
 end

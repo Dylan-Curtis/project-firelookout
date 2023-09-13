@@ -82,6 +82,9 @@ function LoginForm({ onLogin, setErrors, errors }) {
                 <button type="submit" class="submit">Submit</button>
                 <div class="subtitle">Don't Have an Account?<Link to="/signup"> Sign Up!</Link></div>
               
+                <div className="TOSNotice">
+                  By continuing to use Lookout Trails, you agree to our <strong>Terms of Service</strong> and <strong>Privacy Policy.</strong>  
+                </div>
             </form>
             </div>
           );

@@ -31,10 +31,29 @@ code {
   text-decoration: none;   
 }
 
-/* .comboForm{
-  justify-self: center;
-  margin-left: 33%;
-} */
+.TOSNotice{
+  /* By continuing to use Lookout Trails, you agree to our Terms of Service and Privacy Policy. */
+
+/* position: absolute;
+width: 213px;
+height: 28px;
+left: 102px;
+top: 573px; */
+margin-top: 1vw;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 15px;
+/* or 150% */
+/* display: flex; */
+align-items: center;
+text-align: center;
+/* text-wrap: wrap;
+white-space: normal; */
+color: #4A5744;
+}
+
 
 .nav {
   padding-left: 0px;  
@@ -447,6 +466,8 @@ color: #4C6251;
   font-size: 16px;
   font-weight: 600;
   margin-top: 10px;
+  align-items: center;
+  text-align: center;
 }
 
 .input-container {

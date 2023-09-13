@@ -99,8 +99,11 @@ function SignUpForm({ setUser, setErrors, errors }) {
       />
       <button type="submit" className="submit">Submit</button>
       <div className="subtitle">Have An Account Already? <Link to="/login"> Log In!</Link></div>
+      <div className="TOSNotice">
+          By continuing to use Lookout Trails, you agree to our <strong>Terms of Service</strong> and <strong>Privacy Policy.</strong>  
+      </div>
     </form>
-    </div>
+  </div>
   );
 }
 
