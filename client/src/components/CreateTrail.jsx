@@ -1,5 +1,6 @@
 import { useState } from "react"
 import LookoutLogo from '../images/LookoutLogo.png'
+import CreateATrailBackground from '../images/CreateATrailBackground.png'
 
 function AddTrailForm({ onAddTrail }) {
     const [trailData, setTrailData] = useState({
@@ -11,6 +12,18 @@ function AddTrailForm({ onAddTrail }) {
         image: "",
         map:""
     })
+
+    const backgroundStyle = {
+      backgroundImage: `url(${CreateATrailBackground})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      minHeight: '100vh', // Ensure the container takes up the entire viewport height
+      display: 'flex',
+      alignItems: 'center', // Vertically center the form
+      justifyContent: 'center', // Horizontally center the form
+      padding: '20px', // Add some padding around the form
+    };
 
     function handleChange(e) {
         setTrailData({
@@ -57,6 +70,7 @@ function AddTrailForm({ onAddTrail }) {
     
    
     return(
+      <div className="container" style={backgroundStyle}>
         <form onSubmit={handleSubmit}className="formContainer" class= "form">
            <img  className="lookoutImageForm" alt="lookoutLogo" src={LookoutLogo}></img>
             <h1 class="title">Create A Trail</h1>
@@ -99,6 +113,7 @@ function AddTrailForm({ onAddTrail }) {
                 />
                 <button class="submit"> Save New Trail</button>
         </form>
+       </div>
     )
 }
 

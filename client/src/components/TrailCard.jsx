@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import halfStar from "../images/HalfStar.png"; // Import the PNG for the half star
+import {Link} from 'react-router-dom'
+import halfStar from "../images/HalfStar.png"; 
+import TrailPage from "./TrailPage"
 
 function TrailCard({ trail, reviews }) {
   const [liked, setLiked] = useState(false);
@@ -43,7 +45,9 @@ function TrailCard({ trail, reviews }) {
   return (
     <div className="TrailCard">
       <div className="image-container">
+      <Link to={`/trail/${trail.id}`}>
         <img src={trail.image} alt={trail.name} className="trail-image" />
+        </Link>
         <button onClick={handleLike} className={`heart-button ${liked ? "liked" : ""}`}>
           {liked ? "❤️" : "🤍"}
         </button>

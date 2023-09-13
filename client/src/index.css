@@ -12,10 +12,6 @@ body {
   flex-direction: column;  
 }
 
-main{
-  color: #fffdd0;
-}
-
 code {
   font-family: 'Poppins';
 }
