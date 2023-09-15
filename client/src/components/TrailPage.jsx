@@ -22,20 +22,42 @@ function TrailPage({liked, setLiked, reviews}) {
   }
 
   return (
-    <div className="TrailPage">
-      <img src={trail.trail.image} alt={trail.trail.name} className="trail-page-image" />
+    <div className="trail-page-container">
+     <img src={trail.trail.image} alt={trail.trail.name} className="trail-page-image" />
+
+    <div className="trail-page-content">
+
       <div className="trail-page-name">
+        <span>
           {trail.trail.name}
-          <button onClick={handleLike} className={`trail-page-heart-button ${liked ? "liked" : ""}`}>
-          {liked ? "❤️" : "🤍"}
-          <span>
+             <button onClick={handleLike} className={`trail-page-heart-button ${liked ? "liked" : ""}`}> {liked ? "❤️" : "🤍"}  </button>         
+          </span>
+          </div>
+          <div className="trail-page-info">
           <RenderStars className="trail-page-rating" reviews={trail.reviews} trail={trail}/>
           {trail.trail.length}mi • {trail.trail.elevation_gain}Elevation Gain
-          </span>
-        </button>
-        </div>
+          </div>
           
-      {/* Render other trail details here */}
+          <p className="trail-page-body">{trail.trail.body}</p>
+          
+        
+          
+        <div className="trail-page-reviews">
+        <h3>Reviews</h3>
+        {trail.reviews.length > 0 ? (
+          <ul>
+            {trail.reviews.map((review, index) => (
+              <li key={index}>
+                <p>Rating: {review.rating}</p>
+                <p>{review.body}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No Reviews</p>
+        )}
+      </div>
+    </div>
     </div>
   );
 }

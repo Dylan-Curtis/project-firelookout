@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import halfStar from "../images/HalfStar.png"; 
 
-function RenderStars({ reviews, trail }) {
+function RenderStars({ reviews }) {
   const [averageRating, setAverageRating] = useState(null);
 
   useEffect(() => {
@@ -11,8 +11,6 @@ function RenderStars({ reviews, trail }) {
       setAverageRating(avg);
     }
   }, [reviews]);
-console.log(trail)
-console.log(reviews)
   const generateStars = () => {
     const maxStars = 5;
     const roundedRating = Math.round(averageRating * 2) / 2; // Round to nearest 0.5

@@ -545,7 +545,7 @@ color: #4C6251;
   height: 12px;
   }
 
-  .trail-rating{
+  #trail-rating{
     position: absolute; 
     top: 16rem; 
     right: 1rem; 
@@ -557,6 +557,14 @@ color: #4C6251;
     right: 1rem; 
   }
 
+  .trail-page-container{
+    display: grid;   
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);   
+  }
+
   .trailList {
     display: grid;
   grid-template-columns: repeat(4, 1fr); /* Create four equally sized columns */
@@ -564,21 +572,22 @@ color: #4C6251;
   justify-items: center; /* Center items horizontally within each column */
   padding: 20px; /* Adjust the padding as needed */
   }
-  .TrailPage{
-    display: grid;    
+
+  .trail-page-content{
+     grid-column: 4/ 5;
+    grid-row: 1;
   }
 
   .trail-page-image{
-    position: flex;
+    grid-column: 2/ 5;
+    grid-row: 1;
     width: 534px;
     height: 598px;
-    left: 201px;
-    top: 126px;
-    margin-left: 20vw;    
+    left: 201px;    
     }
 
     .trail-page-name{
-  grid-column: 2 / 2;
+  grid-column: 3 / 5;
   grid-row: 1;
   font-family: 'Poppins';
   font-style: normal;
@@ -588,13 +597,41 @@ color: #4C6251;
   position: relative;  
   right: 10vw;
   color: #4C6251;
+  align-items: center;
   }
 
-  .trail-page-heart-button{
-    position: flex;    
+  .trail-page-info{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    right: 10vw;
+    position: relative;  
+  }
+
+  /* .trail-page-rating{
+    grid-column: 3 / 5;
+    grid-row: 1;
+  } */
+
+  .trail-page-body{
+    grid-column: 3 / 5;
+    grid-row: 1;
+    font-family: 'Poppins';
+    font-style: normal;    
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    position: relative;  
+    right: 10vw;
+    color: #222222;
+
+
+    }
+
+  .trail-page-heart-button{      
     background: transparent;
     border: none;
     font-size: 24px;
     cursor: pointer;
-    justify-items: center;
+    justify-items:baseline;
   }
