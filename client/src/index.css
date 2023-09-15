@@ -588,6 +588,13 @@ color: #4C6251;
   position: relative;  
   right: 10vw;
   color: #4C6251;
+  }
 
-
+  .trail-page-heart-button{
+    position: flex;    
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    justify-items: center;
   }

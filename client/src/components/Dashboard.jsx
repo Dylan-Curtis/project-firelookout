@@ -42,7 +42,7 @@ function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
   }, [user, setTrails, setErrors]);  
 
   useEffect(() => {
-    console.log(trails);
+   
   }, [trails]);
 
   
