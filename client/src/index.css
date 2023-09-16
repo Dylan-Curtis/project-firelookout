@@ -579,6 +579,9 @@ color: #4C6251;
   .trail-page-content{
     grid-column: 4/ 7;
     grid-row: 1;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    display: grid;
   }
 
   .trail-page-image{
@@ -590,7 +593,7 @@ color: #4C6251;
     }
 
     .trail-page-name{
-  grid-column: 3 / 7;
+  grid-column: 1 /5;
   grid-row: 1;
   font-family: 'Poppins';
   font-style: normal;
@@ -598,16 +601,18 @@ color: #4C6251;
   font-size: 35px;
   line-height: 52px;
   position: relative;  
-  right: 10vw;
+  right: 7vw;
   color: #4C6251;
   align-items: center;
   }
 
   .trail-page-info{
+    grid-column: 1/ 5;
+    grid-row: 1;
     display: flex;
     align-items: center;
     justify-content: left;
-    right: 10vw;
+    right: 7vw;
     position: relative;  
   }
 
@@ -616,16 +621,17 @@ color: #4C6251;
     grid-row: 1;
   } */
 
-  .trail-page-body{    
+  .trail-page-body{   
+    grid-column: 1 / 4; 
     font-family: 'Poppins';
     font-style: normal;    
     font-weight: 400;
     font-size: 15px;
     line-height: 22px;
     position: relative;  
-    right: 10vw;
+    right: 7vw;
     color: #222222;
-
+    
 
     }
 
