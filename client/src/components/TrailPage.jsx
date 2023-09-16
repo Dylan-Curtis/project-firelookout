@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RenderStars from "./RenderStars";
+import ReviewItem from "./ReviewItem";
 
 function TrailPage({liked, setLiked, reviews}) {
   const { trailId } = useParams();
@@ -40,24 +41,28 @@ function TrailPage({liked, setLiked, reviews}) {
           
           <p className="trail-page-body">{trail.trail.body}</p>
           
-        
+          </div>
           
         <div className="trail-page-reviews">
         <h3>Reviews</h3>
         {trail.reviews.length > 0 ? (
           <ul>
-            {trail.reviews.map((review, index) => (
+            {/* {trail.reviews.map((review, index) => (
               <li key={index}>
                 <p>Rating: {review.rating}</p>
                 <p>{review.body}</p>
               </li>
-            ))}
+            ))} */}
+            <div className="review-list">
+              {trail.reviews.map((review, index) => (
+                <ReviewItem key={index} review={review} /> 
+              ))}
+            </div>
           </ul>
         ) : (
           <p>No Reviews</p>
         )}
-      </div>
-    </div>
+      </div>    
     </div>
   );
 }

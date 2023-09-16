@@ -27,8 +27,9 @@ function TrailCard({ trail, reviews, liked, setLiked }) {
         <span>
         <h3 className="trail-name">
           {trail.name}</h3>
-          
+         <div className="trail-rating-card">
           <RenderStars reviews={trail.reviews} trail={trail}/>
+          </div>
         </span>
         <div className="trail-length"> {trail.length} mi
           <span className="review-count">

@@ -541,14 +541,17 @@ color: #4C6251;
 
 
 .half-star-icon {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
+  
   }
-
-  #trail-rating{
+  .trail-rating-card{
     position: absolute; 
     top: 16rem; 
     right: 1rem; 
+  }
+  .trail-rating{    
+    color: #F3C831;
   }
 
   .review-count{
@@ -559,14 +562,14 @@ color: #4C6251;
 
   .trail-page-container{
     display: grid;   
-    display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);   
   }
 
   .trailList {
-    display: grid;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create four equally sized columns */
   grid-template-columns: repeat(4, 1fr); /* Create four equally sized columns */
   gap: 20px; /* Adjust the gap between cards as needed */
   justify-items: center; /* Center items horizontally within each column */
@@ -574,7 +577,7 @@ color: #4C6251;
   }
 
   .trail-page-content{
-     grid-column: 4/ 5;
+    grid-column: 4/ 7;
     grid-row: 1;
   }
 
@@ -587,7 +590,7 @@ color: #4C6251;
     }
 
     .trail-page-name{
-  grid-column: 3 / 5;
+  grid-column: 3 / 7;
   grid-row: 1;
   font-family: 'Poppins';
   font-style: normal;
@@ -613,9 +616,7 @@ color: #4C6251;
     grid-row: 1;
   } */
 
-  .trail-page-body{
-    grid-column: 3 / 5;
-    grid-row: 1;
+  .trail-page-body{    
     font-family: 'Poppins';
     font-style: normal;    
     font-weight: 400;
@@ -635,3 +636,28 @@ color: #4C6251;
     cursor: pointer;
     justify-items:baseline;
   }
+
+  .trail-page-reviews {
+    margin-top: 20px;
+    flex-grow: 0; 
+    grid-column: 1 / 7;
+    grid-row: 2;
+  }
+  /* Style for the reviews section title */
+.trail-page-reviews h3 {
+  border-bottom:  5px solid #748A76; /* Add a horizontal line (border) under the title */
+  padding-bottom: 10px; /* Add some spacing between the title and the line */
+  margin-bottom: 20px; /* Add margin to separate the title from reviews */
+}
+
+/* Style for each individual review item */
+.trail-page-reviews {
+  border-bottom: 5px solid #748A76; /* Add a horizontal line (border) under each review item */
+  padding-bottom: 10px; /* Add some spacing between each review and the line */
+  margin-bottom: 20px; /* Add margin to separate individual reviews */
+}
+
+/* Optional: If you want to remove the border for the last review item */
+.trail-page-reviews:last-child {
+  border-bottom: 5px solid #748A76; /* Remove the border for the last review item */
+}
