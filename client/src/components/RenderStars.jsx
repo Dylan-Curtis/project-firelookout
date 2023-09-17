@@ -11,6 +11,7 @@ function RenderStars({ reviews }) {
       setAverageRating(avg);
     }
   }, [reviews]);
+  
   const generateStars = () => {
     const maxStars = 5;
     const roundedRating = Math.round(averageRating * 2) / 2; // Round to nearest 0.5

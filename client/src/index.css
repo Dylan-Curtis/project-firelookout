@@ -646,24 +646,31 @@ color: #4C6251;
   .trail-page-reviews {
     margin-top: 20px;
     flex-grow: 0; 
-    grid-column: 1 / 7;
+    grid-column: 2 / 5;
     grid-row: 2;
   }
   /* Style for the reviews section title */
 .trail-page-reviews h3 {
-  border-bottom:  5px solid #748A76; /* Add a horizontal line (border) under the title */
+  border-bottom:  3px solid #748A76; /* Add a horizontal line (border) under the title */
   padding-bottom: 10px; /* Add some spacing between the title and the line */
   margin-bottom: 20px; /* Add margin to separate the title from reviews */
 }
 
 /* Style for each individual review item */
 .trail-page-reviews {
-  border-bottom: 5px solid #748A76; /* Add a horizontal line (border) under each review item */
+  /* border-bottom: 5px solid #748A76;  */
   padding-bottom: 10px; /* Add some spacing between each review and the line */
   margin-bottom: 20px; /* Add margin to separate individual reviews */
+  margin-bottom: 20px
 }
 
-/* Optional: If you want to remove the border for the last review item */
-.trail-page-reviews:last-child {
-  border-bottom: 5px solid #748A76; /* Remove the border for the last review item */
+
+/* .trail-page-reviews:last-child {
+  border-bottom: 5px solid #748A76; 
+} */
+
+.review-item{
+  border-bottom: 3px solid #748A76;
+  padding-bottom: 10px;
+  margin-bottom: 20px
 }
