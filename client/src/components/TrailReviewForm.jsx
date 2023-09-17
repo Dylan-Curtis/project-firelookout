@@ -25,20 +25,26 @@ function TrailReviewForm({ onSubmit }) {
   
     return (
       <div className="container" style={backgroundStyle}>  
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
         <label>
           Rating:
-          <input type="number" min="1" max="5" value={rating} onChange={e => setRating(e.target.value)} required />
+          <input type="number" min="1" max="5"  value={rating} onChange={e => setRating(e.target.value)} required />
         </label>
         <label>
           Condition:
-          <input type="text" value={condition} onChange={e => setCondition(e.target.value)} required />
+          <input  placeholder="User Name"
+        className="input-container"        
+        name="name" 
+        type="text" value={condition} onChange={e => setCondition(e.target.value)} required />
         </label>
         <label>
           Body:
           <textarea value={body} onChange={e => setBody(e.target.value)} required />
         </label>
-        <button type="submit">Submit Review</button>
+        <button  placeholder="User Name"
+        className="input-container"
+        type="text"
+        name="name">Submit Review</button>
       </form>
       </div>
     )
