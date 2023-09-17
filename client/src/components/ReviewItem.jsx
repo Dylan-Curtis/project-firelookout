@@ -30,7 +30,7 @@ function ReviewItem({ review }) {
 
   return (
     <div className="review-item">
-      <p>Created on: {formattedDate}</p>
+      <p>{formattedDate}</p>
       <span className="trail-rating">{generateStars()}</span>
       <p>{review.body}</p>
     </div>

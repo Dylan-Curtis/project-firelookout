@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import RenderStars from "./RenderStars";
 import ReviewItem from "./ReviewItem";
 
+
 function TrailPage({liked, setLiked, reviews}) {
   const { trailId } = useParams();
   const [trail, setTrail] = useState(null);
