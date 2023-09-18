@@ -36,11 +36,13 @@ function TrailPage({ liked, setLiked, reviews }) {
     setShowReviewForm(false);
   };
 
+  
+
   return (
     <div>
       {showReviewForm ? (
         // Display the review form if showReviewForm is true
-        <TrailReviewForm onReviewSubmit={handleReviewSubmit} />
+        <TrailReviewForm onReviewSubmit={handleReviewSubmit} trail={trail.trail} />
       ) : (
         <div className="trail-page-container">
           <img src={trail.trail.image} alt={trail.trail.name} className="trail-page-image" />
