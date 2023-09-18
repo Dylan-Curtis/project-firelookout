@@ -552,6 +552,12 @@ color: #4C6251;
   }
   .trail-rating{    
     color: #F3C831;
+    
+  }
+
+  .trail-rating-big{
+  font-size: 48px;
+  color: #F3C831;
   }
 
   .review-count{

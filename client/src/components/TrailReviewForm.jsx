@@ -34,36 +34,33 @@ function TrailReviewForm({ onSubmit, trail }) {
       <form onSubmit={handleSubmit} className="form">
         <img className="lookoutImageForm" alt="lookoutLogo" src={LookoutLogo}></img>
         <div className="title">{trail.name}</div>
-        <label>
-          Rating:
+        <label>          
           <div className="stars">
             {[1, 2, 3, 4, 5].map((star) => (
               <span
                 key={star}
-                className="star"
+                className="trail-rating-big" 
                 onClick={() => handleStarClick(star)}
               >
                 {star <= rating ? "★" : "☆"} {/* Display ★ for filled and ☆ for empty */}
               </span>
             ))}
-          </div>
-          {rating > 0 ? `${rating}/5` : ''} {/* Display rating only if it's greater than 0 */}
+          </div>          
         </label>
         <label>
-          Condition:
           <input
-            placeholder="User Name"
+            placeholder="Condition"
             className="input-container"
             name="name"
             type="text" value={condition} onChange={e => setCondition(e.target.value)} required />
         </label>
-        <label>
-          Body:
-          <textarea value={body} onChange={e => setBody(e.target.value)} required />
+        <label>         
+          <textarea className="input-container" placeholder="Leave Your Review Here" value={body} onChange={e => setBody(e.target.value)} required />
         </label>
-        <button placeholder="User Name"
-          className="input-container"
-          type="text"
+
+        <button 
+           type="submit" 
+           className="submit"          
           name="name">Submit Review</button>
       </form>
     </div>
