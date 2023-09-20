@@ -2,12 +2,13 @@ import React, { useContext, useState } from "react";
 import ReviewBackground from '../images/ReviewBackground.png';
 import LookoutLogo from '../images/LookoutLogo.png';
 import { UserContext } from "../App";
+import { useNavigate } from 'react-router-dom';
 
 function TrailReviewForm({ onSubmit, trail, setShowReviewForm }) {
   const [rating, setRating] = useState(0);
   const [body, setBody] = useState('');
   const [condition, setCondition] = useState('');
-
+  const navigate = useNavigate();
   const backgroundStyle = {
     backgroundImage: `url(${ReviewBackground})`,
     backgroundSize: 'cover',
@@ -21,13 +22,14 @@ function TrailReviewForm({ onSubmit, trail, setShowReviewForm }) {
   };
 
   const user = useContext(UserContext);
-  const reviewData ={
-   rating: (rating),
-   body: (body),
-   user: (user),        
-   condition: (condition),
-   trail: (trail),
-  } 
+  console.log(user)
+  const reviewData = {
+    rating: rating,
+    body: body,
+    user: user,
+    condition: condition,
+    trail: trail,
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,8 +44,10 @@ function TrailReviewForm({ onSubmit, trail, setShowReviewForm }) {
       .then((r) => {
         if (r.ok) {
           r.json().then((user) => {
-            // Assuming onLogin is a function you want to call with the updated user data
+            // Assuming onSubmit is a function you want to call with the updated user data
             onSubmit(user);
+            // Navigate to a different route if needed
+            navigate(`/trails/${trail.id}`);
           });
         } else {
           r.json().then((err) => {
@@ -102,7 +106,7 @@ function TrailReviewForm({ onSubmit, trail, setShowReviewForm }) {
         <button type="submit" className="submit">
          post
         </button>
-        <button   onClick={() => setShowReviewForm(true)} className="submit">
+        <button onClick={() => setShowReviewForm(false)} className="submit">
          Go Back
         </button>
       </form>

@@ -16,7 +16,7 @@ function TrailCard({ trail, reviews, liked, setLiked }) {
   return (
     <div className="TrailCard">
       <div className="image-container">
-      <Link trail={trail} to={`/trail/${trail.id}`}>
+      <Link to={`/trail/${trail.id}`}>
         <img src={trail.image} alt={trail.name} className="trail-image" />
         </Link>
         <button onClick={handleLike} className={`heart-button ${liked ? "liked" : ""}`}>

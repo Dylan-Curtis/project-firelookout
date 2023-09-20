@@ -4,7 +4,7 @@ import RenderStars from "./RenderStars";
 import ReviewItem from "./ReviewItem";
 import TrailReviewForm from "./TrailReviewForm";
 
-function TrailPage({ liked, setLiked, reviews }) {
+function TrailPage({ liked, setLiked, onSubmit}) {
   const { trailId } = useParams();
   const [trail, setTrail] = useState(null);
   const [showReviewForm, setShowReviewForm] = useState(false);
@@ -29,9 +29,8 @@ function TrailPage({ liked, setLiked, reviews }) {
 
   return (
     <div>
-      {showReviewForm ? (
-        // Display the review form if showReviewForm is true
-        <TrailReviewForm trail={trail.trail} setShowReviewForm={setShowReviewForm} />
+      {showReviewForm ? (        
+        <TrailReviewForm trail={trail.trail} setShowReviewForm={setShowReviewForm} onSubmit={onSubmit} />
       ) : (
         <div className="trail-page-container">
           <img src={trail.trail.image} alt={trail.trail.name} className="trail-page-image" />
