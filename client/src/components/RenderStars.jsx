@@ -36,12 +36,8 @@ function RenderStars({ reviews }) {
   };
 
   return (
-    <div>
-      {reviews.length > 0 ? (
-        <span className="trail-rating">{generateStars()}</span>
-      ) : (
-        <span className="no-reviews">No Reviews</span>
-      )}
+    <div>     
+        <span className="trail-rating">{generateStars()}</span>     
     </div>
   );
 }

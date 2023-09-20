@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :trails
   post "/login", to: "sessions#login"
   post "/signup", to: "users#create"
+  post "/newreview", to: "reviews#create"
   delete "/logout", to: "sessions#logout"
   get "/authorized_user", to: "users#show"
   get "/average_ratings", to: "trails#average_ratings"

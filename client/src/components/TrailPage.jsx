@@ -14,35 +14,24 @@ function TrailPage({ liked, setLiked, reviews }) {
     fetch(`/trails/${trailId}`)
       .then((response) => response.json())
       .then((trail) => setTrail(trail));
-    console.log(trail);
+      
   }, [trailId]);
 
   const handleLike = () => {
     setLiked(!liked);
   };
-
+  console.log(trail)
   if (!trail) {
     return <div>Loading...</div>;
   }
-
-  const handleReviewSubmit = (newReview) => {
-    // You can handle the review submission logic here, e.g., send it to a server.
-    // Once the review is submitted, you can update the reviews state and hide the form.
-    // For now, let's just print the submitted review to the console.
-    console.log("Submitted Review:", newReview);
-    // Assuming you have a function to update the list of reviews, update it here.
-
-    // Hide the review form after submission
-    setShowReviewForm(false);
-  };
-
+  
   
 
   return (
     <div>
       {showReviewForm ? (
         // Display the review form if showReviewForm is true
-        <TrailReviewForm onReviewSubmit={handleReviewSubmit} trail={trail.trail} />
+        <TrailReviewForm trail={trail.trail} setShowReviewForm={setShowReviewForm} />
       ) : (
         <div className="trail-page-container">
           <img src={trail.trail.image} alt={trail.trail.name} className="trail-page-image" />

@@ -1,13 +1,12 @@
-import React from "react";
-import halfStar from "../images/HalfStar.png"; // Import your half star image here
+import halfStar from "../images/HalfStar.png"; 
 
 function ReviewItem({ review }) {
-  // Placeholder values for averageRating and halfStar
-  const averageRating = 4; // Replace with the actual average rating
-  const maxStars = 5;
-  const roundedRating = Math.round(averageRating * 2) / 2; // Round to nearest 0.5
   const formattedDate = new Date(review.created_at).toLocaleDateString();
-  const generateStars = () => {
+
+  // Create a StarRating component to display stars
+  function generateStars() {
+    const maxStars = 5;
+    const roundedRating = Math.round(review.rating * 2) / 2; // Round to nearest 0.5
     const starIcons = [];
 
     for (let i = 1; i <= maxStars; i++) {
@@ -24,12 +23,12 @@ function ReviewItem({ review }) {
         starIcons.push(<span key={i}>☆</span>);
       }
     }
-
+    
     return starIcons;
-  };
+  }
 
   return (
-    <div className="review-item">
+<div className="review-item">
       <p>{formattedDate}</p>
       <span className="trail-rating">{generateStars()}</span>
       <p>{review.body}</p>

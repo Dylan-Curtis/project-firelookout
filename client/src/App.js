@@ -10,18 +10,21 @@ import TrailReviewForm from './components/TrailReviewForm';
 import CreateTrail from './components/CreateTrail';
 import UserProfile from './components/UserProfile';
 import TrailPage from './components/TrailPage';
+import { createContext } from 'react';
 
+export const UserContext = createContext ()
 function App() {
   const [trails, setTrails] = useState(null)
     const [user, setUser] = useState(null)
     const [errors, setErrors] = useState([]);
     const [liked, setLiked] = useState(false);
   return (
+    <UserContext.Provider value={user} >
     <div>
      <Header user={user} setUser={setUser} setErrors={setErrors} errors={errors}/>
       <main>
-        {/* <Switch> */}
-          <Routes>
+      
+          <Routes>          
             <Route path="/" element={<Dashboard trails={trails} setTrails={setTrails} user={user} setUser={setUser} errors={errors} setErrors={setErrors} liked={liked} setLiked={setLiked}/> } />      
             <Route path="/signup" element= {<SignUpForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>} />
             <Route path="/login" element= {<LoginForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>} /> 
@@ -29,13 +32,12 @@ function App() {
             <Route path="/create-trail" element= {<CreateTrail  errors = {errors} setErrors={setErrors} user={user} />} /> 
             <Route path="/user" element= {<UserProfile  errors = {errors} setErrors={setErrors} user={user} />} /> 
             <Route path={`/trail/:trailId`} element={<TrailPage errors={errors} setErrors={setErrors} user={user} liked={liked} setLiked={setLiked} />} />
-            {/* <Route path= element={<LoginForm />}/>    */}
-         </Routes>
+         </Routes>         
          
-        {/* </Switch> */}
       </main>  
-      <Footer/>
+      <Footer/>     
     </div>
+    </UserContext.Provider>
   )
 }
 

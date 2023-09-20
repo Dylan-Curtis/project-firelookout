@@ -34,12 +34,12 @@ class TrailsController < ApplicationController
     end
 
    def average_rating
-  average = calculate_average_rating(@trail)
+  average = calculate_average_rating(trail)
   render json: { trail: @trail, average_rating: average }
     end
   
     def calculate_average_rating(trail)
-      reviews = trail.reviews
+      reviews = @trail.reviews
       if reviews.empty?
         0
       else
