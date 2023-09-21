@@ -7,20 +7,27 @@ import TrailReviewForm from "./TrailReviewForm";
 function TrailPage({ liked, setLiked, onSubmit}) {
   const { trailId } = useParams();
   const [trail, setTrail] = useState(null);
+  const [reviews, setReviews] = useState(null);
   const [showReviewForm, setShowReviewForm] = useState(false);
+  
 
   useEffect(() => {
     // Fetch the trail data using the ID
     fetch(`/trails/${trailId}`)
       .then((response) => response.json())
-      .then((trail) => setTrail(trail));
-      
+      .then((trailData) =>  {
+        console.log(trailData)
+        setReviews(trailData.reviews); // Separate state update for reviews
+
+        setTrail(trailData.trail); // Separate state update for trail
+      })
+      console.log(trail)
   }, [trailId]);
 
   const handleLike = () => {
     setLiked(!liked);
   };
-  console.log(trail)
+ 
   if (!trail) {
     return <div>Loading...</div>;
   }
@@ -30,15 +37,15 @@ function TrailPage({ liked, setLiked, onSubmit}) {
   return (
     <div>
       {showReviewForm ? (        
-        <TrailReviewForm trail={trail.trail} setShowReviewForm={setShowReviewForm} onSubmit={onSubmit} />
+        <TrailReviewForm trail={trail} setShowReviewForm={setShowReviewForm} onSubmit={onSubmit} setReviews={setReviews} />
       ) : (
         <div className="trail-page-container">
-          <img src={trail.trail.image} alt={trail.trail.name} className="trail-page-image" />
+          <img src={trail.image} alt={trail.name} className="trail-page-image" />
 
           <div className="trail-page-content">
             <div className="trail-page-name">
               <span>
-                {trail.trail.name}
+                {trail.name}
                 <button
                   onClick={handleLike}
                   className={`trail-page-heart-button ${liked ? "liked" : ""}`}
@@ -48,11 +55,11 @@ function TrailPage({ liked, setLiked, onSubmit}) {
               </span>
             </div>
             <div className="trail-page-info">
-              <RenderStars className="trail-page-rating" reviews={trail.reviews} trail={trail} />
-              {trail.trail.length}mi • {trail.trail.elevation_gain}Elevation Gain
+              <RenderStars className="trail-page-rating" reviews={reviews} trail={trail} />
+              {trail.length}mi • {trail.elevation_gain}Elevation Gain
             </div>
 
-            <p className="trail-page-body">{trail.trail.body}</p>
+            <p className="trail-page-body">{trail.body}</p>
           </div>
 
           <div className="trail-page-reviews">
@@ -65,9 +72,9 @@ function TrailPage({ liked, setLiked, onSubmit}) {
                 Leave a Review
               </button>
             </h3>
-            {trail.reviews.length > 0 ? (
+            {reviews.length > 0 ? (
               <div className="review-list">
-                {trail.reviews.map((review, index) => (
+                {reviews.map((review, index) => (
                   <ReviewItem key={index} review={review} />
                 ))}
               </div>

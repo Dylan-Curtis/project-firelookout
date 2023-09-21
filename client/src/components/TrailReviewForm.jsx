@@ -2,13 +2,12 @@ import React, { useContext, useState } from "react";
 import ReviewBackground from '../images/ReviewBackground.png';
 import LookoutLogo from '../images/LookoutLogo.png';
 import { UserContext } from "../App";
-import { useNavigate } from 'react-router-dom';
 
-function TrailReviewForm({ onSubmit, trail, setShowReviewForm }) {
+function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
   const [rating, setRating] = useState(0);
   const [body, setBody] = useState('');
   const [condition, setCondition] = useState('');
-  const navigate = useNavigate();
+
   const backgroundStyle = {
     backgroundImage: `url(${ReviewBackground})`,
     backgroundSize: 'cover',
@@ -22,7 +21,7 @@ function TrailReviewForm({ onSubmit, trail, setShowReviewForm }) {
   };
 
   const user = useContext(UserContext);
-  console.log(user)
+
   const reviewData = {
     rating: rating,
     body: body,
@@ -33,7 +32,7 @@ function TrailReviewForm({ onSubmit, trail, setShowReviewForm }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     fetch('/newreview', {
       method: "POST",
       headers: {
@@ -41,24 +40,17 @@ function TrailReviewForm({ onSubmit, trail, setShowReviewForm }) {
       },
       body: JSON.stringify(reviewData),
     })
-      .then((r) => {
-        if (r.ok) {
-          r.json().then((user) => {
-            // Assuming onSubmit is a function you want to call with the updated user data
-            onSubmit(user);
-            // Navigate to a different route if needed
-            navigate(`/trails/${trail.id}`);
-          });
-        } else {
-          r.json().then((err) => {
-            console.log(err.error);
-            // Handle errors as needed
-          });
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    .then((response) => response.json())
+    .then((newReview) => {
+      // Append the new review to the existing reviews
+      setReviews((prevReviews) => [...prevReviews, newReview]);
+  
+      // Close the review form after successful submission
+      setShowReviewForm(false);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
   };
 
   const handleStarClick = (clickedRating) => {
