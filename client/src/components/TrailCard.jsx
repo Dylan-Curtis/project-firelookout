@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useContext } from 'react';
+import { LikeContext } from '../App';
 import {Link} from 'react-router-dom'
 import RenderStars from "./RenderStars";
 
-function TrailCard({ trail, reviews, liked, setLiked }) {
-  
-  
+function TrailCard({ trail, reviews }) {
 
- 
+  const { liked, setLiked } = useContext(LikeContext);
 
   const handleLike = () => {
     setLiked(!liked);

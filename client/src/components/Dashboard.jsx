@@ -6,6 +6,7 @@ import CreateTrail from './CreateTrail';
 import HeadImage from '../images/HeadImage.png'
 
 function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
+  const [like, setLike] = useState(false);
   useEffect(() => {
     const fetchUser = async () => {
       const response = await fetch('authorized_user');
@@ -80,7 +81,7 @@ function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
 
       
 
-    const trailCards = trails && trails.map(trail => <TrailCard key={trail.id} trail={trail} reviews={trail.reviews} />)
+    const trailCards = trails && trails.map(trail => <TrailCard key={trail.id} trail={trail} reviews={trail.reviews} setLike/>)
   
     return (
 

@@ -13,6 +13,8 @@ import TrailPage from './components/TrailPage';
 import { createContext } from 'react';
 
 export const UserContext = createContext ()
+export const LikeContext = createContext ()
+
 function App() {
   const [trails, setTrails] = useState(null)
     const [user, setUser] = useState(null)
@@ -23,8 +25,8 @@ function App() {
     <div>
      <Header user={user} setUser={setUser} setErrors={setErrors} errors={errors}/>
       <main>
-      
-          <Routes>          
+      <LikeContext.Provider  value={{ liked, setLiked }}>   
+          <Routes>                
             <Route path="/" element={<Dashboard trails={trails} setTrails={setTrails} user={user} setUser={setUser} errors={errors} setErrors={setErrors} liked={liked} setLiked={setLiked}/> } />      
             <Route path="/signup" element= {<SignUpForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>} />
             <Route path="/login" element= {<LoginForm onLogin={setUser} errors = {errors} setErrors={setErrors} user={user} setUser = {setUser}/>} /> 
@@ -33,7 +35,7 @@ function App() {
             <Route path="/user" element= {<UserProfile  errors = {errors} setErrors={setErrors} user={user} />} /> 
             <Route path={`/trail/:trailId`} element={<TrailPage errors={errors} setErrors={setErrors} user={user} liked={liked} setLiked={setLiked} />} />
          </Routes>         
-         
+         </LikeContext.Provider>
       </main>  
       <Footer/>     
     </div>

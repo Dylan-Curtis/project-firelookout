@@ -7,9 +7,8 @@ class TrailsController < ApplicationController
     end
   
     def show
-      average = calculate_average_rating(@trail)
-      reviews = @trail.reviews # Fetch associated reviews
-      render json: { trail: @trail, average_rating: average, reviews: reviews }
+      reviews_with_username = @trail.reviews.map { |review| { name: review.user.name, rating: review.rating, body: review.body } }
+      render json: { trail: @trail, reviews: reviews_with_username }
     end
     
   

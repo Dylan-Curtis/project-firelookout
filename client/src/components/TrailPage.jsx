@@ -41,7 +41,6 @@ function TrailPage({ liked, setLiked, onSubmit}) {
       ) : (
         <div className="trail-page-container">
           <img src={trail.image} alt={trail.name} className="trail-page-image" />
-
           <div className="trail-page-content">
             <div className="trail-page-name">
               <span>
@@ -66,7 +65,7 @@ function TrailPage({ liked, setLiked, onSubmit}) {
             <h3>
               Reviews{" "}
               <button
-                className="reviewButton"
+                className="smallButton"
                 onClick={() => setShowReviewForm(true)} // Show the review form when the button is clicked
               >
                 Leave a Review
