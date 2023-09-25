@@ -2,14 +2,17 @@ import {Link} from 'react-router-dom'
 import {useState} from 'react'
 import LookoutLogo from '../images/LookoutLogo.png'
 import { useNavigate } from "react-router-dom";
-import SignInBackground from '../images/SignInBackground.png'
+import EditProfileBackground from '../images/EditProfile.png'
 function EditProfileForm({ onLogin, setErrors, errors }) {
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [blurb, setBlurb] = useState("");
+    // const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
     const backgroundStyle = {
-      backgroundImage: `url(${SignInBackground})`,
+      backgroundImage: `url(${EditProfileBackground})`,
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
@@ -27,7 +30,7 @@ function EditProfileForm({ onLogin, setErrors, errors }) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email, password }),
+          body: JSON.stringify({ email, firstName, lastName, blurb }),
         }).then((r) => {           
             if (r.ok) {
               r.json().then((user) => onLogin(user));
@@ -53,38 +56,52 @@ function EditProfileForm({ onLogin, setErrors, errors }) {
                 {err}
               </p>
             ))}
-              <div class="title">Welcome Back!</div>
+              <div class="title">Edit Profile</div>
              
                 {/* <label htmlFor="email">Email</label> */}
                 <input
                   type="text"
-                  id="email"
+                  id="firstName"
                   autoComplete="off"
                   class="input-container"
-                  value={email}
-                  placeholder="Email Address"
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={firstName}
+                  placeholder="First Name"
+                  onChange={(e) => setFirstName(e.target.value)}
                 /> 
             
              
-                <label htmlFor="password"></label>
+                <label htmlFor="lastName"></label>
                 <input
-                  type="password"
-                  id="password"
+                  type="text"
+                  id="lastName"
                   class="input-container"
-                  autoComplete="current-password"
-                  value={password}
-                  placeholder="Password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />                       
+                  value={lastName}
+                  placeholder="Last Name"
+                  onChange={(e) => setLastName(e.target.value)}
+                />    
+                
+                <label htmlFor="Email"></label>
+                <input
+                  type="email"
+                  id="email"
+                  class="input-container"
+                  autoComplete="email"
+                  value={email}
+                  placeholder="username@gmail.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                />                    
+              <label htmlFor="Email"></label>
+                <input
+                  type="test"
+                  id="Blurb"
+                  class="input-container"
+                  autoComplete="no"
+                  value={blurb}
+                  placeholder="Add an about me!"
+                  onChange={(e) => setBlurb(e.target.value)}
+                />   
              
-             
-                <button type="submit" class="submit">Submit</button>
-                <div class="subtitle">Don't Have an Account?<Link to="/signup"> Sign Up!</Link></div>
-              
-                <div className="TOSNotice">
-                  By continuing to use Lookout Trails, you agree to our <strong>Terms of Service</strong> and <strong>Privacy Policy.</strong>  
-                </div>
+                <button type="submit" class="submit">Save</button>                
             </form>
             </div>
           );
