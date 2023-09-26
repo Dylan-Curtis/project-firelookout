@@ -13,6 +13,7 @@ import TrailPage from './components/TrailPage';
 import { createContext } from 'react';
 
 export const UserContext = createContext ()
+
 export const LikeContext = createContext ()
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
     const [errors, setErrors] = useState([]);
     const [liked, setLiked] = useState(false);
   return (
-    <UserContext.Provider value={user} >
+    <UserContext.Provider value={{ user, setUser }}>
     <div>
      <Header user={user} setUser={setUser} setErrors={setErrors} errors={errors}/>
       <main>
