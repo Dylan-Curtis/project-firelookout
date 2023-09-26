@@ -19,17 +19,18 @@ function UserProfile() {
         </div>
       ) : (
         <div className="user-container">
-          <div className="button-container">
+          <div className="title-container">
             <h3 className="title">{user.user.name}</h3>
             <button onClick={handleEditToggle} className="smallButton">
               Edit Account
             </button>
           </div>
-          <p id="user-profile">{user.user.blurb}</p>
-          {!showEditProfileForm && (
-            <p>Edit your profile to add an about me section</p>
-          )}
+          <p id="user-profile">{user.user.blurb}</p>          
+            <p>Edit your profile to add an about me section</p>          
         </div>
+        // <div>
+        //   {likedTrails}
+        //   </div>
       )}
     </div>
   );
