@@ -7,33 +7,34 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
   const [rating, setRating] = useState(0);
   const [body, setBody] = useState('');
   const [condition, setCondition] = useState('');
+  const { user, setUser } = useContext(UserContext);
 
   const backgroundStyle = {
     backgroundImage: `url(${ReviewBackground})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    minHeight: '80vh',
+    minHeight: '70vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     padding: '20px',
   };
 
-  const user = useContext(UserContext);
+  
 
   const reviewData = {
     rating: rating,
     body: body,
-    user: user,
+    user_id: user.id,
     condition: condition,
-    trail: trail,
+    trail_id: trail.id,
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
   
-    fetch('/newreview', {
+    fetch('/new-review', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

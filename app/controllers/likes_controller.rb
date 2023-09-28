@@ -1,32 +1,35 @@
 class LikesController < ApplicationController
   before_action :find_user, only: [:toggle_like, :liked_trails]
-  
-    def toggle_like
-      liked = params[:liked] == 'true'
-  
-      if !liked
-        @user.liked_trails << @trail
-      else
-        @user.liked_trails.delete(@trail)
-      end
-  
-      render json: { message: 'Like/unlike successful' }
+  before_action :find_trail, only: [:toggle_like]
+
+  def toggle_like
+    like = @user.likes.find_by(trail_id: @trail.id)
+
+    if like
+      like.destroy
+      render json: { message: 'Unlike successful' }
+    else
+      like = Like.create!(like_params)
+      render json: like, status: :created
     end
+  end
 
-    def liked_trails
-      liked_trails = @user.liked_trails
-      render json: liked_trails
-    end
+  def liked_trails
+    liked_trails = @user.likes.map { |like| like.trail }
+    render json: liked_trails
+  end
 
-    private
+  private
 
-def find_user
-  @user = User.find(params[:user_id]) # Make sure to adjust this based on your route and parameter naming
-end
+  def find_user
+    @user = User.find(params[:user_id]) # Make sure to adjust this based on your route and parameter naming
+  end
 
-def find_trail
-  @trail = Trail.find(params[:trail_id]) # Make sure to adjust this based on your route and parameter naming
-end
+  def find_trail
+    @trail = Trail.find(params[:trail_id]) # Make sure to adjust this based on your route and parameter naming
+  end
 
-
+  def like_params
+    params.permit(:trail_id, :user_id)
+  end
 end
