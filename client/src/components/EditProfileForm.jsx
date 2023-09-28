@@ -12,9 +12,9 @@ function EditProfileForm({ handleEditToggle }) {
   const [blurb, setBlurb] = useState("");
   const [errors, setErrors] = useState("")
 
-  // Access the setUser function from UserContext
-  const setUser = useContext(UserContext);
-  console.log(setUser.setUser)
+ 
+  const {setUser} = useContext(UserContext);
+ 
   const navigate = useNavigate();
 
   const backgroundStyle = {
