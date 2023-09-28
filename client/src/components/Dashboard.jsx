@@ -45,22 +45,6 @@ function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
   useEffect(() => {
    
   }, [trails]);
-
-  
-  const logout =( e)=>{
-    e.preventDefault()
-    fetch('/logout', {
-    method: 'DELETE'
-})
-.then(r => {
-    if(r.status === 204){
-        setUser(null)}
-        else{
- const error = r.json()
- 
-        }
-    })
-}
   
   function onAddTrail(newTrail) {
     setTrails(currentTrails =>[...currentTrails, newTrail]);

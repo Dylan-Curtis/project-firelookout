@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import RenderStars from "./RenderStars";
 import ReviewItem from "./ReviewItem";
 import TrailReviewForm from "./TrailReviewForm";
@@ -16,12 +16,12 @@ function TrailPage({ liked, setLiked, onSubmit}) {
     fetch(`/trails/${trailId}`)
       .then((response) => response.json())
       .then((trailData) =>  {
-        console.log(trailData)
+       
         setReviews(trailData.reviews); // Separate state update for reviews
 
         setTrail(trailData.trail); // Separate state update for trail
       })
-      console.log(trail)
+      
   }, [trailId]);
 
   const handleLike = () => {

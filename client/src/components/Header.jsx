@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 import LookoutLogo from '../images/LookoutLogo.png'
 
-function Header({ setErrors, setUser, user}) {  
+function Header({ user }) {  
 
 
     return (

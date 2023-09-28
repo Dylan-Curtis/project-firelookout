@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import RenderStars from "./RenderStars";
 
 function TrailCard({ trail, reviews }) {
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const [liked, setLiked] = useState(false);
 
   const handleLike = async () => { // Make sure to mark the function as async

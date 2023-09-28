@@ -7,7 +7,7 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
   const [rating, setRating] = useState(0);
   const [body, setBody] = useState('');
   const [condition, setCondition] = useState('');
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const backgroundStyle = {
     backgroundImage: `url(${ReviewBackground})`,

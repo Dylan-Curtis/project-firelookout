@@ -34,7 +34,7 @@ function UserProfile() {
     // Fetch User Reviews
     async function fetchUserReviews() {
       try {
-        const response = await fetch('reviews#index_by_user');
+        const response = await fetch(`/reviews/${user.id}`);
         if (response.ok) {
           const data = await response.json();
           // Assuming 'data' is an array of user reviews, you can slice it to get the first 4.

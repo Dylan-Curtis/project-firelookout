@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get "/authorized_user", to: "users#show"
   get "/average_ratings", to: "trails#average_ratings"
   get '/likes/:user_id/liked_trails', to: 'likes#liked_trails', as: 'liked_trails'
-  get '/reviews/:user_id', to: 'reviews#index_by_user'
+  get '/reviews/:user_id', to: 'reviews#index'
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end
