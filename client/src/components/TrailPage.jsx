@@ -1,18 +1,62 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import RenderStars from "./RenderStars";
 import ReviewItem from "./ReviewItem";
 import TrailReviewForm from "./TrailReviewForm";
+import { UserContext } from '../App';
 
-function TrailPage({ liked, setLiked, onSubmit}) {
+function TrailPage({ onSubmit }) {
+  const { user, setUser } = useContext(UserContext);
   const { trailId } = useParams();
   const [trail, setTrail] = useState(null);
   const [reviews, setReviews] = useState(null);
   const [showReviewForm, setShowReviewForm] = useState(false);
+  const [liked, setLiked] = useState(false);
+
   
+  useEffect(() => {
+    const checkLikedStatus = async () => {
+      try {
+        const response = await fetch(`/likes/show?trail_id=${trail.id}&user_id=${user.id}`);
+        // console.log("fetching likes")
+        if (response.ok) {
+          const likedStatus = await response.json();
+          // console.log(likedStatus.liked)
+          setLiked(likedStatus);
+          console.log(liked)
+        } else {
+          console.error('Failed to check liked status for trail');
+        }
+      } catch (error) {
+        console.error('An error occurred while processing the request', error);
+      }
+    };
+
+    checkLikedStatus();
+  }, []);
+
+  const handleLike = async () => { 
+    try {
+      const response = await fetch('/like-trail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ trail_id: trail.id, user_id: user.id, }),
+      });
+
+      if (response.ok) {
+        setLiked(!liked);
+      } else {
+        console.error('Failed to like/unlike trail');
+      }
+    } catch (error) {
+      console.error('An error occurred while processing the request', error);
+    }
+  };
 
   useEffect(() => {
-    // Fetch the trail data using the ID
+    
     fetch(`/trails/${trailId}`)
       .then((response) => response.json())
       .then((trailData) =>  {
@@ -23,15 +67,11 @@ function TrailPage({ liked, setLiked, onSubmit}) {
       })
       
   }, [trailId]);
-
-  const handleLike = () => {
-    setLiked(!liked);
-  };
+ 
  
   if (!trail) {
     return <div>Loading...</div>;
-  }
-  
+  } 
   
 
   return (
@@ -43,7 +83,6 @@ function TrailPage({ liked, setLiked, onSubmit}) {
           <img src={trail.image} alt={trail.name} className="trail-page-image" />
           <div className="trail-page-content">
             <div className="trail-page-name">
-              <span>
                 {trail.name}
                 <button
                   onClick={handleLike}
@@ -51,7 +90,6 @@ function TrailPage({ liked, setLiked, onSubmit}) {
                 >
                   {liked ? "❤️" : "🤍"}
                 </button>
-              </span>
             </div>
             <div className="trail-page-info">
               <RenderStars className="trail-page-rating" reviews={reviews} trail={trail} />
@@ -66,7 +104,7 @@ function TrailPage({ liked, setLiked, onSubmit}) {
               Reviews{" "}
               <button
                 className="smallButton"
-                onClick={() => setShowReviewForm(true)} // Show the review form when the button is clicked
+                onClick={() => setShowReviewForm(true)}
               >
                 Leave a Review
               </button>

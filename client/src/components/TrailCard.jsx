@@ -15,7 +15,7 @@ function TrailCard({ trail, reviews }) {
         if (response.ok) {
           const likedStatus = await response.json();
           // console.log(likedStatus.liked)
-          setLiked(likedStatus.liked);
+          setLiked(likedStatus);
           // console.log(liked)
         } else {
           console.error('Failed to check liked status for trail');
@@ -28,9 +28,8 @@ function TrailCard({ trail, reviews }) {
     checkLikedStatus();
   }, []);
 
-  const handleLike = async () => { // Make sure to mark the function as async
+  const handleLike = async () => { 
     try {
-      // Send a POST request to your backend to like/unlike the trail
       const response = await fetch('/like-trail', {
         method: 'POST',
         headers: {
@@ -40,7 +39,6 @@ function TrailCard({ trail, reviews }) {
       });
 
       if (response.ok) {
-        // Update the liked state in your React context
         setLiked(!liked);
       } else {
         console.error('Failed to like/unlike trail');

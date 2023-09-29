@@ -21,9 +21,9 @@ class LikesController < ApplicationController
     like = Like.find_by(trail_id: trail_id, user_id: user_id)
 
     if like
-      render json: { liked: true }
+      render json:  true 
     else
-      render json: { liked: false }
+      render json:  false 
     end
   end
 
