@@ -5,6 +5,7 @@ body, h1, h2, h3, p, ul, li {
 
 body {
   margin: 0;
+  
   font-family:  'Poppins';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -178,18 +179,17 @@ line-height: 52px;
 color: #F3C831;
   }
 
- .HikeATrail-footer{
+ .footer-links{
 font-family: 'Poppins';
 font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 22px;
 display: flex;
 align-items: center;
 color: #EBEEEA;
+padding-bottom: 0.5vh;
+text-decoration: none;
  } 
 
- .footer-links {
+ .footer-content {
   position: absolute;
   width: 295px;
   height: 53px;
@@ -197,19 +197,8 @@ color: #EBEEEA;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 1vh;
 }
-
- .CreateATrail-footer{
-
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 22px;
-  display: flex;
-  align-items: center;  
-  color: #EBEEEA;  
-  }
 
 .HikeATrail{
 position: absolute;
@@ -448,6 +437,13 @@ color: #4C6251;
 .userInfoHeader{
   float: right;
   font-size: 20px;
+}
+
+.user-liked-trails {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px; 
 }
 
 .title {
@@ -708,6 +704,16 @@ color: #4C6251;
   margin-right: auto;   
   grid-template-columns: repeat(5,1fr);
   grid-template-rows: repeat(2, 1fr);   
+}
+
+.user-hikes{
+margin-left: 10vw;
+font-family: 'Poppins';
+font-style: normal;
+display: flex;
+font-size: 28px;
+color: #4C6251;
+
 }
 
 .user-title{  

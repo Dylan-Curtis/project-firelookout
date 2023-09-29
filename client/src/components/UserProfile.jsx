@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import EditProfileForm from "./EditProfileForm";
 import { UserContext } from "../App";
+import TrailCard from './TrailCard';
 
 function UserProfile() {
   const [showEditProfileForm, setShowEditProfileForm] = useState(false);
@@ -31,13 +32,11 @@ function UserProfile() {
       }
     }
 
-    // Fetch User Reviews
     async function fetchUserReviews() {
       try {
         const response = await fetch(`/reviews/${user.id}`);
         if (response.ok) {
           const data = await response.json();
-          // Assuming 'data' is an array of user reviews, you can slice it to get the first 4.
           const firstFourUserReviews = data.slice(0, 4);
           setUserReviews(firstFourUserReviews);
           console.log(data)
@@ -49,10 +48,13 @@ function UserProfile() {
       }
     }
 
-    // Call the fetch functions
     fetchLikes();
     fetchUserReviews();
-  }, []); // Empty dependency array to run the effect only once when the component mounts
+  }, []); 
+
+  const trailCards = likedTrails && likedTrails.map((trail) => (
+    <TrailCard key={trail.id} trail={trail} reviews={trail.reviews} />
+  ));
 
   return (
     <div>
@@ -72,13 +74,9 @@ function UserProfile() {
           <p>Edit your profile to add an about me section</p>
         </div>
       )}
-      <div>
-        <h3>Liked Trails</h3>
-        <ul>
-          {likedTrails.map((trail) => (
-            <li key={trail.id}>{trail.name}</li>
-          ))}
-        </ul>
+      <h3 className="user-hikes">{user.name}'s Favorite Lookout Hikes</h3>   
+      <div className='user-liked-trails'>            
+        {trailCards}        
       </div>
       <div>
         <h3>User Reviews</h3>

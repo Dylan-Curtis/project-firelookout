@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import TrailCard from './TrailCard';
 import SignUpForm from './SignUpForm';
-import ChangeName from './ChangeName';
 import CreateTrail from './CreateTrail';
 import HeadImage from '../images/HeadImage.png'
 
