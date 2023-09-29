@@ -14,6 +14,19 @@ class LikesController < ApplicationController
     end
   end
 
+  def show
+    trail_id = params[:trail_id]
+    user_id = params[:user_id]
+    
+    like = Like.find_by(trail_id: trail_id, user_id: user_id)
+
+    if like
+      render json: { liked: true }
+    else
+      render json: { liked: false }
+    end
+  end
+
   def liked_trails
     liked_trails = @user.likes.map { |like| like.trail }
     render json: liked_trails

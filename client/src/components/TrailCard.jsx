@@ -1,11 +1,32 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../App';
 import { Link } from 'react-router-dom';
 import RenderStars from "./RenderStars";
 
 function TrailCard({ trail, reviews }) {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const [liked, setLiked] = useState(false);
+
+  useEffect(() => {
+    const checkLikedStatus = async () => {
+      try {
+        const response = await fetch(`/likes/show?trail_id=${trail.id}&user_id=${user.id}`);
+        // console.log("fetching likes")
+        if (response.ok) {
+          const likedStatus = await response.json();
+          // console.log(likedStatus.liked)
+          setLiked(likedStatus.liked);
+          // console.log(liked)
+        } else {
+          console.error('Failed to check liked status for trail');
+        }
+      } catch (error) {
+        console.error('An error occurred while processing the request', error);
+      }
+    };
+
+    checkLikedStatus();
+  }, []);
 
   const handleLike = async () => { // Make sure to mark the function as async
     try {

@@ -13,7 +13,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
-      minHeight: '100vh', // Ensure the container takes up the entire viewport height
+      minHeight: '67vh', // Ensure the container takes up the entire viewport height
       display: 'flex',
       alignItems: 'center', // Vertically center the form
       justifyContent: 'center', // Horizontally center the form

@@ -14,7 +14,7 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    minHeight: '70vh',
+    minHeight: '67vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

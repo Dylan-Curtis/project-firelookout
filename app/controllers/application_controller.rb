@@ -3,6 +3,7 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordNotFound, with: :not_found 
   rescue_from ActiveRecord::RecordInvalid, with: :not_valid
   before_action :authorized_user
+  
   def current_user
     @user ||= User.find_by_id(session[:user_id]) if session[:user_id]
   end
