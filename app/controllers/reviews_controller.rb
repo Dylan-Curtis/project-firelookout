@@ -15,6 +15,6 @@ class ReviewsController < ApplicationController
     
   private 
   def review_params
-    params.permit(:body, :condition, :rating, :trail_id, :user_id) 
+    params.permit(:body, :condition, :rating, :date, :trail_id, :user_id) 
   end
 end

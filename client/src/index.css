@@ -604,11 +604,11 @@ color: #4C6251;
     line-height: 27px;
     color: #748A76;
     justify-content:space-evenly;
+    grid-column: 4/ 7;
   }
 
   .trailList {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Create four equally sized columns */
   grid-template-columns: repeat(4, 1fr); /* Create four equally sized columns */
   gap: 20px; /* Adjust the gap between cards as needed */
   justify-items: center; /* Center items horizontally within each column */
@@ -744,4 +744,31 @@ color: #4C6251;
 
 .user-title{  
   grid-column: 3 / 3;
+}
+
+.review-name{ 
+  display: grid; 
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: Black;
+}
+
+.review-header {
+  display: flex; /* Makes the children elements appear in a row */
+  align-items: center; /* Vertically centers the children elements */
+  margin-bottom: 10px; /* Adds spacing between the header and the stars */
+  font-weight: bold; /* Makes the text bold, adjust as needed */
+}
+
+.review-date{
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #222222;
 }

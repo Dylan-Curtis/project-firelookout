@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import TrailCard from './TrailCard';
 import SignUpForm from './SignUpForm';
-import CreateTrail from './CreateTrail';
 import HeadImage from '../images/HeadImage.png'
 
 function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
-  const [like, setLike] = useState(false);
+
   useEffect(() => {
     const fetchUser = async () => {
       const response = await fetch('authorized_user');

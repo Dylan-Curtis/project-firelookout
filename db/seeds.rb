@@ -102,6 +102,7 @@ map: "https://static-maps.alltrails.com/production/at-map/72531622/v1-trail-us-w
       condition: ['Good', 'Bad', 'Normal', 'Snowy', 'Washed Out'].sample,
       rating: Faker::Number.between(from: 1, to: 5),
       user: user,
+      date: Faker::Date.backward(days: rand(1..365)),
       trail: trail  # Associate the review with a trail using the new trail_id column
     )
   end

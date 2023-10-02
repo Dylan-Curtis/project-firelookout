@@ -7,6 +7,7 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
   const [rating, setRating] = useState(0);
   const [body, setBody] = useState('');
   const [condition, setCondition] = useState('');
+  const [date, setDate] = useState('')
   const { user } = useContext(UserContext);
 
   const backgroundStyle = {
@@ -26,6 +27,7 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
   const reviewData = {
     rating: rating,
     body: body,
+    date: date,
     user_id: user.id,
     condition: condition,
     trail_id: trail.id,
@@ -75,6 +77,17 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
               </span>
             ))}
           </div>
+        </label>
+        <label>
+        <input
+            placeholder="When did you go on this trail?"
+            className="input-container"
+            name="date"
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            required
+          />
         </label>
         <label>
           <input

@@ -8,7 +8,6 @@ function TrailCard({ trail, reviews }) {
   const { user, setUser } = useContext(UserContext);
   const [liked, setLiked] = useState(false);
 
-
   useEffect(() => {
     const checkLikedStatus = async () => {
       try {
@@ -50,7 +49,7 @@ function TrailCard({ trail, reviews }) {
     }
   };
 
-
+console.log(reviews)
   return (
     <div className="TrailCard">
       <div className="image-container">
