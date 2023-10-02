@@ -673,8 +673,6 @@ color: #4C6251;
     position: relative;  
     right: 7vw;
     color: #222222;
-    
-
     }
 
   .trail-page-heart-button{      
@@ -771,4 +769,19 @@ color: #4C6251;
   letter-spacing: 0em;
   text-align: center;
   color: #222222;
+  margin-right: 10px;
+}
+
+.condition-dropdown{
+  height: 50px;
+  position: relative;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #7D7B7B;
+  font-size: 18px;   
+  width: 100%; 
+  margin-bottom: 1vw;  
 }

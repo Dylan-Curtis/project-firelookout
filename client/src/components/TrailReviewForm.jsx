@@ -22,8 +22,6 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
     padding: '20px',
   };
 
-  
-
   const reviewData = {
     rating: rating,
     body: body,
@@ -45,10 +43,7 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
     })
     .then((response) => response.json())
     .then((newReview) => {
-      // Append the new review to the existing reviews
       setReviews((prevReviews) => [...prevReviews, newReview]);
-  
-      // Close the review form after successful submission
       setShowReviewForm(false);
     })
     .catch((error) => {
@@ -79,7 +74,7 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
           </div>
         </label>
         <label>
-        <input
+          <input
             placeholder="When did you go on this trail?"
             className="input-container"
             name="date"
@@ -90,15 +85,21 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
           />
         </label>
         <label>
-          <input
-            placeholder="Condition"
-            className="input-container"
-            name="name"
-            type="text"
+          {/* Condition Dropdown */}
+          <select
+            className="condition-dropdown"
+            name="condition"
             value={condition}
             onChange={(e) => setCondition(e.target.value)}
             required
-          />
+          >
+            <option value="">Select condition</option>
+            <option value="Good">Good</option>
+            <option value="Bad">Bad</option>
+            <option value="Normal">Normal</option>
+            <option value="Snowy">Snowy</option>
+            <option value="Washed Out">Washed Out</option>
+          </select>
         </label>
         <label>
           <textarea
@@ -110,7 +111,7 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
           />
         </label>
         <button type="submit" className="submit">
-         post
+         Post
         </button>
         <button onClick={() => setShowReviewForm(false)} className="submit">
          Go Back
