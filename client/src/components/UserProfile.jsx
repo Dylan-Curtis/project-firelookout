@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import EditProfileForm from "./EditProfileForm";
 import { UserContext } from "../App";
 import TrailCard from './TrailCard';
+import  ReviewedTrailCard from './ReviewedTrailCard';
 
 function UserProfile() {
   const [showEditProfileForm, setShowEditProfileForm] = useState(false);
@@ -51,10 +52,19 @@ function UserProfile() {
     fetchLikes();
     fetchUserReviews();
   }, []); 
-
+  console.log(userReviews)
   const trailCards = likedTrails && likedTrails.map((trail) => (
     <TrailCard key={trail.id} trail={trail} reviews={trail.reviews} />
   ));
+
+  const reviewedTrailCards =userReviews && userReviews.map((userReview) => (
+    <ReviewedTrailCard key={userReview.trail.id} trail={userReview.trail} review={userReview} />
+  ));
+
+  if (!user) {
+    return <div>Loading...</div>;
+  } 
+  
 
   return (
     <div>
@@ -79,12 +89,10 @@ function UserProfile() {
         {trailCards}        
       </div>
       <div>
-        <h3>User Reviews</h3>
-        <ul>
-          {userReviews.map((review) => (
-            <li key={review.id}>{review.body}</li>
-          ))}
-        </ul>
+        <h3 className="user-hikes">User Reviews</h3>   
+          <div className= "user-liked-trails">
+          {reviewedTrailCards} 
+          </div>            
       </div>
     </div>
   );

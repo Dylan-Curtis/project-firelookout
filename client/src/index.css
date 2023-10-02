@@ -100,6 +100,17 @@ background:transparent;
   border: none;
   font-size: 24px;
   cursor: pointer;
+ 
+}
+
+.map-button {
+  position: absolute;
+  justify-self: center;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer; 
+  grid-column: 2;
 }
 
 .trail-image {
@@ -581,6 +592,18 @@ color: #4C6251;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);   
+    
+  }
+
+  .trail-page-tags{ 
+    display: grid; 
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #748A76;
+    justify-content:space-evenly;
   }
 
   .trailList {
@@ -598,6 +621,7 @@ color: #4C6251;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     display: grid;
+    margin-top: 10vh;  
   }
 
   .trail-page-image{
@@ -605,7 +629,8 @@ color: #4C6251;
     grid-row: 1;
     width: 534px;
     height: 598px;
-    left: 201px;    
+    left: 201px; 
+    margin-top: 10vh;     
     }
 
     .trail-page-name{
@@ -628,8 +653,9 @@ color: #4C6251;
     display: flex;
     align-items: center;
     justify-content: left;
-    right: 7vw;
+    right: 7vw;       
     position: relative;  
+    
   }
 
   /* .trail-page-rating{

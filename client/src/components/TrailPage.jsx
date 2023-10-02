@@ -1,9 +1,10 @@
-import React, { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import RenderStars from "./RenderStars";
 import ReviewItem from "./ReviewItem";
 import TrailReviewForm from "./TrailReviewForm";
 import { UserContext } from '../App';
+import MapIcon from '../images/MapIcon.png';
 
 function TrailPage({ onSubmit }) {
   const { user, setUser } = useContext(UserContext);
@@ -12,16 +13,14 @@ function TrailPage({ onSubmit }) {
   const [reviews, setReviews] = useState(null);
   const [showReviewForm, setShowReviewForm] = useState(false);
   const [liked, setLiked] = useState(false);
+  const [showMap, setShowMap] = useState(false);
 
-  
   useEffect(() => {
     const checkLikedStatus = async () => {
       try {
         const response = await fetch(`/likes/show?trail_id=${trail.id}&user_id=${user.id}`);
-        // console.log("fetching likes")
         if (response.ok) {
           const likedStatus = await response.json();
-          // console.log(likedStatus.liked)
           setLiked(likedStatus);
           console.log(liked)
         } else {
@@ -56,44 +55,53 @@ function TrailPage({ onSubmit }) {
   };
 
   useEffect(() => {
-    
     fetch(`/trails/${trailId}`)
       .then((response) => response.json())
       .then((trailData) =>  {
-       
-        setReviews(trailData.reviews); // Separate state update for reviews
-
-        setTrail(trailData.trail); // Separate state update for trail
+        setReviews(trailData.reviews);
+        setTrail(trailData.trail);
       })
-      
   }, [trailId]);
- 
- 
+
   if (!trail) {
     return <div>Loading...</div>;
   } 
   
+  const toggleMap = () => {
+    setShowMap(!showMap);
+  };
 
   return (
     <div>
       {showReviewForm ? (        
         <TrailReviewForm trail={trail} setShowReviewForm={setShowReviewForm} onSubmit={onSubmit} setReviews={setReviews} />
       ) : (
-        <div className="trail-page-container">
-          <img src={trail.image} alt={trail.name} className="trail-page-image" />
+        <div className="trail-page-container">          
+          {showMap ? (
+              <img src={trail.map} alt={trail.name}  className="trail-page-image" />
+          ) : (
+            <img src={trail.image} alt={trail.name} className="trail-page-image" />
+          )}
+          <button
+            onClick={toggleMap}
+            className='map-button'>
+            <img src={MapIcon} alt="Map"/>
+          </button>          
           <div className="trail-page-content">
             <div className="trail-page-name">
-                {trail.name}
-                <button
-                  onClick={handleLike}
-                  className={`trail-page-heart-button ${liked ? "liked" : ""}`}
-                >
-                  {liked ? "❤️" : "🤍"}
-                </button>
+              {trail.name}
+              <button
+                onClick={handleLike}
+                className={`trail-page-heart-button ${liked ? "liked" : ""}`}
+              >
+                {liked ? "❤️" : "🤍"}
+              </button>
             </div>
             <div className="trail-page-info">
               <RenderStars className="trail-page-rating" reviews={reviews} trail={trail} />
-              {trail.length}mi • {trail.elevation_gain}Elevation Gain
+              <div className="trail-page-tags">
+              • {trail.length}mi • {trail.elevation_gain}Elevation Gain
+              </div>
             </div>
 
             <p className="trail-page-body">{trail.body}</p>
@@ -122,7 +130,6 @@ function TrailPage({ onSubmit }) {
         </div>
       )}
     </div>
-    
   );
 }
 

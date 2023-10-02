@@ -3,9 +3,11 @@ import { UserContext } from '../App';
 import { Link } from 'react-router-dom';
 import RenderStars from "./RenderStars";
 
+
 function TrailCard({ trail, reviews }) {
   const { user, setUser } = useContext(UserContext);
   const [liked, setLiked] = useState(false);
+
 
   useEffect(() => {
     const checkLikedStatus = async () => {
@@ -27,7 +29,7 @@ function TrailCard({ trail, reviews }) {
 
     checkLikedStatus();
   }, []);
-
+  
   const handleLike = async () => { 
     try {
       const response = await fetch('/like-trail', {
@@ -48,6 +50,7 @@ function TrailCard({ trail, reviews }) {
     }
   };
 
+
   return (
     <div className="TrailCard">
       <div className="image-container">
@@ -56,8 +59,7 @@ function TrailCard({ trail, reviews }) {
         </Link>
         <button
           onClick={handleLike}
-          className={`heart-button ${liked ? "liked" : ""}`}          
-        >
+          className={`heart-button ${liked ? "liked" : ""}`}>
           {liked ? "❤️" : "🤍"}
         </button>
       </div>
@@ -75,13 +77,6 @@ function TrailCard({ trail, reviews }) {
           </span>
         </div>
       </div>
-      <h3>
-        {trail.reviews.map((review, index) => (
-          <div key={index}>
-            {/* <li className="review">{review.body}</li> */}
-          </div>
-        ))}
-      </h3>
     </div>
   );
 }
