@@ -7,7 +7,7 @@ class TrailsController < ApplicationController
     end
   
     def show
-      reviews_with_username = @trail.reviews.map { |review| { name: review.user.name, rating: review.rating, body: review.body, date: review.date} }
+      reviews_with_username = @trail.reviews.map { |review| { name: review.user.name, condition: review.condition, rating: review.rating, body: review.body, date: review.date} }
       render json: { trail: @trail, reviews: reviews_with_username }
     end
     

@@ -452,9 +452,11 @@ color: #4C6251;
 
 .user-liked-trails {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; 
   flex-wrap: wrap;
-  gap: 16px; 
+  gap: 16px;
+  padding-left: 200px;
+  min-height: 16rem; ;
 }
 
 .title {
@@ -463,6 +465,8 @@ color: #4C6251;
   font-size: 36px;
   font-weight: 600;
   margin-top: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 .subtitle {
@@ -486,7 +490,9 @@ color: #4C6251;
   color: #7D7B7B;
   font-size: 18px;   
   width: 100%; 
-  margin-bottom: 1vw;  
+  margin-bottom: 1vw; 
+  border: 2px solid #4C6251;
+  border-radius: 10px; 
 }
 
 .input { 
@@ -784,4 +790,29 @@ color: #4C6251;
   font-size: 18px;   
   width: 100%; 
   margin-bottom: 1vw;  
+  border: 2px solid #4C6251;
+  border-radius: 10px; 
+}
+
+.review-condition{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: #748A76;
+}
+.revew-form-lables{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 30px;
+color: #4A5744;
+}
+
+.button-container{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
 }

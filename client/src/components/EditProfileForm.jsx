@@ -7,8 +7,7 @@ import { UserContext } from "../App";
 function EditProfileForm({ handleEditToggle }) {
   const [email, setEmail] = useState("");
   const [icon, setIcon] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [name, setName] = useState("");
   const [blurb, setBlurb] = useState("");
   const [errors, setErrors] = useState("")
 
@@ -36,7 +35,7 @@ function EditProfileForm({ handleEditToggle }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, firstName, lastName, blurb }),
+      body: JSON.stringify({ email, name, blurb }),
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {
@@ -67,24 +66,14 @@ function EditProfileForm({ handleEditToggle }) {
           ))}
         <div className="title">Edit Profile</div>
 
-        <input
-          type="text"
-          id="firstName"
-          autoComplete="off"
-          className="input-container"
-          value={firstName}
-          placeholder="First Name"
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-
         <label htmlFor="lastName"></label>
         <input
           type="text"
-          id="lastName"
+          id="name"
           className="input-container"
-          value={lastName}
-          placeholder="Last Name"
-          onChange={(e) => setLastName(e.target.value)}
+          value={name}
+          placeholder="Name"
+          onChange={(e) => setName(e.target.value)}
         />
 
         <label htmlFor="icon"></label>
@@ -118,9 +107,10 @@ function EditProfileForm({ handleEditToggle }) {
           placeholder="Add an about me!"
           onChange={(e) => setBlurb(e.target.value)}
         />
-
+        <span className="button-container">
         <button type="submit" className="submit">Save</button>
         <button onClick={handleEditToggle} className="submit">Back</button>
+        </span>
       </form>
     </div>
   );

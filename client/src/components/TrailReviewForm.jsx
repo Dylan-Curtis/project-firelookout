@@ -60,7 +60,6 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
       <form onSubmit={handleSubmit} className="form">
         <img className="lookoutImageForm" alt="lookoutLogo" src={LookoutLogo}></img>
         <div className="title">{trail.name}</div>
-        <label>
           <div className="stars">
             {[1, 2, 3, 4, 5].map((star) => (
               <span
@@ -72,10 +71,8 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
               </span>
             ))}
           </div>
-        </label>
-        <label>
+        <label className="revew-form-lables">Date</label>
           <input
-            placeholder="When did you go on this trail?"
             className="input-container"
             name="date"
             type="date"
@@ -83,9 +80,7 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
             onChange={(e) => setDate(e.target.value)}
             required
           />
-        </label>
-        <label>
-          {/* Condition Dropdown */}
+        <label className="revew-form-lables">Condition</label>
           <select
             className="condition-dropdown"
             name="condition"
@@ -100,8 +95,7 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
             <option value="Snowy">Snowy</option>
             <option value="Washed Out">Washed Out</option>
           </select>
-        </label>
-        <label>
+          <label className="revew-form-lables">Review</label>
           <textarea
             className="input-container"
             placeholder="Leave Your Review Here"
@@ -109,13 +103,14 @@ function TrailReviewForm({ setReviews, trail, setShowReviewForm }) {
             onChange={(e) => setBody(e.target.value)}
             required
           />
-        </label>
+          <span className="button-container">
         <button type="submit" className="submit">
          Post
         </button>
         <button onClick={() => setShowReviewForm(false)} className="submit">
          Go Back
         </button>
+        </span>
       </form>
     </div>
   );

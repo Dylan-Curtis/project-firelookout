@@ -20,12 +20,14 @@ function ReviewItem({ review }) {
     
     return starIcons;
   }
+  console.log(review.condition)
 console.log(review)
     return (
       <div className="review-item">
       <div className='review-name'>{review.name}</div>
       <div className="review-header">
         <div className='review-date'>{review.date}</div>
+        <div className='review-condition'>{review.condition}</div>
         <div className="trail-rating">{generateStars()}</div>
       </div>
       <p>{review.body}</p>
