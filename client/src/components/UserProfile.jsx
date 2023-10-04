@@ -2,7 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import EditProfileForm from "./EditProfileForm";
 import { UserContext } from "../App";
 import TrailCard from './TrailCard';
-import  ReviewedTrailCard from './ReviewedTrailCard';
+import ReviewedTrailCard from './ReviewedTrailCard';
+import UserCard from './UserCard'; // Import UserCard component
 
 function UserProfile() {
   const [showEditProfileForm, setShowEditProfileForm] = useState(false);
@@ -65,6 +66,7 @@ function UserProfile() {
     return <div>Loading...</div>;
   } 
   
+  console.log(user)
 
   return (
     <div>
@@ -73,26 +75,14 @@ function UserProfile() {
           <EditProfileForm handleEditToggle={handleEditToggle} />
         </div>
       ) : (
-        <div className="user-container">
-          <div className="title-container">
-            <h3 className="title">{user.name}</h3>
-            <button onClick={handleEditToggle} className="smallButton">
-              Edit Account
-            </button>
-          </div>
-          <p id="user-profile">{user.blurb}</p>
-          <p>Edit your profile to add an about me section</p>
-        </div>
+        // Use the UserCard component and pass the user prop
+        <UserCard handleEditToggle={handleEditToggle}/>
       )}
-      <h3 className="user-hikes">{user.name}'s Favorite Lookout Hikes</h3>   
-      <div className='user-liked-trails'>            
-        {trailCards}        
-      </div>
+      <h3 className="user-hikes">{user.name}'s Favorite Lookout Hikes</h3>
+      <div className="user-liked-trails">{trailCards}</div>
       <div>
-        <h3 className="user-hikes">User Reviews</h3>   
-          <div className= "user-liked-trails">
-          {reviewedTrailCards} 
-          </div>            
+        <h3 className="user-hikes">{user.name}'s Past Lookout Hikes</h3>
+        <div className="user-liked-trails">{reviewedTrailCards}</div>
       </div>
     </div>
   );

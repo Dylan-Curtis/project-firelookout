@@ -10,7 +10,7 @@ function AddTrailForm({ onAddTrail }) {
         body: "",
         location: "",            
         image: "",
-        map:""
+        // map:""
     })
 
     const backgroundStyle = {
@@ -105,13 +105,14 @@ function AddTrailForm({ onAddTrail }) {
                    placeholder="image URL"                   
                    onChange={handleChange}                      
                 />
-                     <input type="text"
+                     {/* <input type="text"
                    name="map"       
                    class="input-container"             
                    placeholder="Enter the map's URL"                   
                    onChange={handleChange}                      
-                />
+                /> */}
                 <button class="submit"> Save New Trail</button>
+                
         </form>
        </div>
     )
