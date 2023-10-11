@@ -16,17 +16,17 @@ function EditProfileForm({ handleEditToggle }) {
  
   const navigate = useNavigate();
 
-  const backgroundStyle = {
-    backgroundImage: `url(${EditProfileBackground})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    minHeight: '77vh', // Ensure the container takes up the entire viewport height
-    display: 'flex',
-    alignItems: 'center', // Vertically center the form
-    justifyContent: 'center', // Horizontally center the form
-    padding: '20px', // Add some padding around the form
-  };
+  // const backgroundStyle = {
+  //   backgroundImage: `url(${EditProfileBackground})`,
+  //   backgroundSize: 'cover',
+  //   backgroundRepeat: 'no-repeat',
+  //   backgroundPosition: 'center',
+  //   minHeight: '77vh', // Ensure the container takes up the entire viewport height
+  //   display: 'flex',
+  //   alignItems: 'center', // Vertically center the form
+  //   justifyContent: 'center', // Horizontally center the form
+  //   padding: '20px', // Add some padding around the form
+  // };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -54,7 +54,9 @@ function EditProfileForm({ handleEditToggle }) {
   }
 
   return (
-    <div className="container" style={backgroundStyle}>
+    <div className="container" 
+    // style={backgroundStyle}
+    >
       <form onSubmit={handleSubmit} className="form">
         <img className="lookoutImageForm" alt="lookoutLogo" src={LookoutLogo}></img>
 

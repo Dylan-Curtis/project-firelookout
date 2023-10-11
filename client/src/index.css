@@ -5,7 +5,7 @@ body, h1, h2, h3, p, ul, li {
 
 body {
   margin: 0;
-  
+  background-color: #efeee8;
   font-family:  'Poppins';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,6 +15,7 @@ body {
 
 code {
   font-family: 'Poppins';
+  background-color: #f9f9f7;
 }
 
 #links {
@@ -119,11 +120,15 @@ background:transparent;
   height: 15rem;
   width: 20rem;  
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10%;
 }
 
 .trail-image:hover { 
-  transform: scale(1.1)
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  justify-self: center;
+  overflow:auto;
+  /* border-radius: 10%; */
 }
 
 .trail-details {
@@ -132,6 +137,8 @@ background:transparent;
   flex-direction: column;
   margin-top: 0px;
 }
+
+
 
 .trail-name {
    /* white-space: nowrap; */
@@ -429,10 +436,6 @@ color: #4C6251;
   line-height: 15px;
   border-radius: 30px;
   color: #4C6251;
-
-
-  
-
 }
 
 .form {
@@ -447,9 +450,26 @@ color: #4C6251;
   margin-right: auto;    
 }
 
+.user-profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .userInfoHeader{
   float: right;
   font-size: 20px;
+}
+
+.user-blurb{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 22px;
+justify-self: center; 
+justify-content: center; 
+padding: 20px;
 }
 
 .user-liked-trails {
@@ -666,11 +686,6 @@ color: #4C6251;
     
   }
 
-  /* .trail-page-rating{
-    grid-column: 3 / 5;
-    grid-row: 1;
-  } */
-
   .trail-page-body{   
     grid-column: 1 / 4; 
     font-family: 'Poppins';
@@ -697,23 +712,18 @@ color: #4C6251;
     grid-column: 2 / 5;
     grid-row: 2;
   }
-  /* Style for the reviews section title */
+
 .trail-page-reviews h3 {
-  border-bottom:  3px solid #748A76; /* Add a horizontal line (border) under the title */
-  padding-bottom: 10px; /* Add some spacing between the title and the line */
-  margin-bottom: 20px; /* Add margin to separate the title from reviews */
+  border-bottom:  3px solid #748A76;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-/* Style for each individual review item */
 .trail-page-reviews {
-  /* border-bottom: 5px solid #748A76;  */
-  padding-bottom: 10px; /* Add some spacing between each review and the line */
-  margin-bottom: 20px; /* Add margin to separate individual reviews */
+  padding-bottom: 10px; 
+  margin-bottom: 20px; 
   margin-bottom: 20px
 }
-
-
-
 
 .review-item{
   border-bottom: 3px solid #748A76;
@@ -730,19 +740,21 @@ color: #4C6251;
   
 .user-container{
   display: grid;
-  background-color: transparent;
+  background-color: #f9f9f7;
   border-radius: 20px;
   box-sizing: border-box;
-  height: auto;
   padding: 20px;
-  width: auto;
-  justify-self: center;
+  width: 320px;
+  justify-self: center;  
   margin-left: auto;
-  margin-right: auto;
-  grid-template-columns: 1fr; 
-  grid-template-rows: auto auto; 
+  margin-right: auto;  
 }
-
+.user-card {
+  flex: 1;
+}
+.edit-profile-form {
+  flex: 1; 
+}
 .user-hikes{
 margin-left: 10vw;
 font-family: 'Poppins';
@@ -750,11 +762,22 @@ font-style: normal;
 display: flex;
 font-size: 28px;
 color: #4C6251;
-
+text-align: right
 }
+.user-reviews{
+  margin-left: 10vw;
+  font-family: 'Poppins';
+  font-style: normal;
+  display: flex;
+  font-size: 28px;
+  color: #4C6251;
+  text-align: right;
+  flex: 2;
+  }
+  
 
 .user-title{  
-  grid-column: 3 / 3;
+  padding: 20px;
 }
 
 .review-name{ 

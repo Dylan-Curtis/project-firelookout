@@ -10,6 +10,9 @@ function SignUpForm({ setUser, setErrors, errors }) {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
+  const today = new Date();
+  const formattedDate = today.toISOString().split("T")[0];
+
   const backgroundStyle = {
     backgroundImage: `url(${SignInBackground})`,
     backgroundSize: 'cover',
@@ -25,7 +28,6 @@ function SignUpForm({ setUser, setErrors, errors }) {
   function handleSubmit(e) {
     e.preventDefault();
     
-    // Basic validation checks
     if (!name || !password || !email) {
       setErrors(["Please fill in all fields"]);
       return;
@@ -34,7 +36,8 @@ function SignUpForm({ setUser, setErrors, errors }) {
     const userData = {
       name,
       password,
-      email
+      email,
+      member_since: formattedDate, 
     };
 
     fetch("/signup", {

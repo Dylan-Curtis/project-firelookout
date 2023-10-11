@@ -24,7 +24,6 @@ function UserProfile() {
           const data = await response.json();
           // Assuming 'data' is an array of liked trails, you can slice it to get the first 4.
           const firstFourLikedTrails = data.slice(0, 4);
-          console.log(data)
           setLikedTrails(firstFourLikedTrails);
         } else {
           console.error('Failed to fetch likes');
@@ -41,7 +40,6 @@ function UserProfile() {
           const data = await response.json();
           const firstFourUserReviews = data.slice(0, 4);
           setUserReviews(firstFourUserReviews);
-          console.log(data)
         } else {
           console.error('Failed to fetch user reviews');
         }
@@ -53,7 +51,6 @@ function UserProfile() {
     fetchLikes();
     fetchUserReviews();
   }, []); 
-  console.log(userReviews)
   const trailCards = likedTrails && likedTrails.map((trail) => (
     <TrailCard key={trail.id} trail={trail} reviews={trail.reviews} />
   ));

@@ -3,6 +3,8 @@ import { UserContext } from "../App";
 
 function UserCard({handleEditToggle}) {
     const { user, setUser } = useContext(UserContext);
+
+    
     return (
         <div className="user-container">
           <span className="title-container">
@@ -11,12 +13,14 @@ function UserCard({handleEditToggle}) {
               <button onClick={handleEditToggle} className="smallButton">
                 Edit Account
               </button>
+              {user.created_at}
             </h3>
           </span>
+          {user.member_since}
           {user.blurb ? (
-            <p id="user-profile">{user.blurb}</p>
+            <div className="user-blurb">{user.blurb}</div>
           ) : (
-            <p>Edit your profile to add an about me section</p>
+            <div className="user-blurb">Edit your profile to add an about me section</div>
           )}
         </div>
       );

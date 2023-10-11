@@ -5,7 +5,6 @@ import LookoutLogo from '../images/LookoutLogo.png'
 
 function Header({ user }) {  
 
-
     return (
         <div>        
         <nav>

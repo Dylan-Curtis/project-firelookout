@@ -11,6 +11,7 @@ function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
       if (response.ok) {
         const user = await response.json();
         setUser(user);
+        console.log(user)
       } else {
         const error = await response.json();
         setErrors(error);
@@ -43,7 +44,7 @@ function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
   useEffect(() => {
    
   }, [trails]);
-  
+  console.log(user)
   function onAddTrail(newTrail) {
     setTrails(currentTrails =>[...currentTrails, newTrail]);
   } 
