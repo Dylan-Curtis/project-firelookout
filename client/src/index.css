@@ -42,16 +42,19 @@ color: #4A5744;
 }
 
 
-.nav {
+
+.header-container{
+  justify-content: space-between; 
+  background: #748A76;  
   padding-left: 0px;  
   border: 0;
   outline: 0;
   font-size: 100%;
-  vertical-align: baseline;
-  background: #748A76;  
+  vertical-align:middle; 
   padding: 30px;
   height: 4vh; 
-  bottom: 0
+  bottom: 0;
+  align-items: baseline;
 }
 
 .lookoutImageFooter{
@@ -268,9 +271,11 @@ height: auto;
   left: 83vw;
   top: 0px;
   background-color: #F3C831;
+  vertical-align: middle;
 }
 
 .signupButton{
+  vertical-align: middle;
   position: absolute;
   width: 75px;
   height: 21px;
@@ -450,26 +455,61 @@ color: #4C6251;
   margin-right: auto;    
 }
 
-.user-profile-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.login-div{
+  background-color:#748A76;
+  vertical-align: middle;
 }
 
-.userInfoHeader{
-  float: right;
+.userInfoHeader{  
+  float:right;
+  vertical-align:space; 
+  align-items: center;
+  text-align: left;
+  margin-right: 5%;
+  text-decoration: none;  
+  display: grid;
+  column-gap: 150px;
+ 
+}
+
+.userInfoName{
+  display:inline-grid;
+  text-decoration: none;
+  /* white-space: nowrap; */
   font-size: 20px;
+  height: 21px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  width: 230px;
+  align-items: center;
+  grid-column-start: 1;
+  grid-column-end:3;
 }
 
+.profile-pic-header {
+  width: 54px;
+  height: 54px;
+  background: #D9D9D9;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+  object-position: right; 
+  order: 5;  left: 85vw;
+  top: 2vh;
+  margin-right: 10%;
+  grid-column-start: 6;
+  
+}
 .user-blurb{
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 400;
 font-size: 15px;
 line-height: 22px;
-justify-self: center; 
-justify-content: center; 
 padding: 20px;
+margin-left: 3%;
+justify-content: left;
 }
 
 .user-liked-trails {
@@ -481,6 +521,21 @@ padding: 20px;
   min-height: 16rem; ;
 }
 
+.user-member-since{
+ 
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 27px;
+justify-content: center;
+/* identical to box height */
+margin-left: 3%;
+color: #748A76;
+
+
+}
+
 .title {
   color: #4C6251;
   font-family: 'Poppins';
@@ -489,6 +544,7 @@ padding: 20px;
   margin-top: 30px;
   justify-content: center;
   align-items: center;
+  margin-left: 3%;
 }
 
 .subtitle {

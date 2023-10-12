@@ -4,9 +4,16 @@ Review.destroy_all
 
 
 puts "Seeding Users"
-5.times {User.create(name: Faker::FunnyName.name,
+5.times do
+  member_since = Faker::Date.between(from: 1.year.ago, to: Date.today)  # Generate a random date within the past year
+  user = User.create(
+    name: Faker::FunnyName.name,
     password: Faker::Internet.password,
-    email: Faker::Internet.email)}
+    email: Faker::Internet.email,
+    member_since: member_since,
+    profile_icon: rand(1..6)
+  )
+end
 puts "Seeding Trails"
 Trail.create([
    { name: "North Mountain Fire Lookout",

@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2023_10_02_183918) do
     t.string "password_digest"
     t.string "email"
     t.text "blurb"
+    t.date "member_since"
+    t.integer "profile_icon"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

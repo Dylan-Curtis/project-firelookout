@@ -14,7 +14,10 @@ def create
 
     user = User.find_or_create_by(email: params[:email]) do |u|
         u.name = params[:name] 
-        u.email = params[:email] 
+        u.email = params[:email]
+        u.blurb = params[:blurb]  
+        u.member_since = params[:member_since]
+        u.profile_icon =  params[:profile_icon]
         u.password = SecureRandom.hex(16)
                   
       end

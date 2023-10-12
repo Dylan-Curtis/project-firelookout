@@ -18,13 +18,13 @@ class UsersController < ApplicationController
         render json: @user, status: :ok
     end
     
-    def show       
+    def show        
         render json: @user, status: :ok
     end    
    
         private 
     def user_params
-        params.permit(:password, :name, :email, :blurb, :created_at)
+        params.permit(:password, :name, :email, :blurb, :member_since, :profile_icon)
     end
 
     def find_user

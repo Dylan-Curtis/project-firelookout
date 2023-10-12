@@ -16,7 +16,7 @@ function UserCard({handleEditToggle}) {
               {user.created_at}
             </h3>
           </span>
-          {user.member_since}
+          <div className="user-member-since"> Member Since {user.member_since }</div>
           {user.blurb ? (
             <div className="user-blurb">{user.blurb}</div>
           ) : (

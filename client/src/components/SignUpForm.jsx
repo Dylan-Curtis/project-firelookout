@@ -38,6 +38,7 @@ function SignUpForm({ setUser, setErrors, errors }) {
       password,
       email,
       member_since: formattedDate, 
+      profile_icon: Math.floor(Math.random() * 6) + 1,
     };
 
     fetch("/signup", {
