@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "../App";
+import ProfileUserIcon from "./ProfileUserIcon"
 
 function UserCard({handleEditToggle}) {
     const { user, setUser } = useContext(UserContext);
@@ -7,6 +8,7 @@ function UserCard({handleEditToggle}) {
     
     return (
         <div className="user-container">
+          <ProfileUserIcon iconIndex={user.profile_icon}/>
           <span className="title-container">
             <h3 className="title">
               {user.name}
@@ -15,13 +17,13 @@ function UserCard({handleEditToggle}) {
               </button>
               {user.created_at}
             </h3>
-          </span>
-          <div className="user-member-since"> Member Since {user.member_since }</div>
+            <div className="user-member-since"> Member Since {user.member_since }</div>
           {user.blurb ? (
             <div className="user-blurb">{user.blurb}</div>
           ) : (
             <div className="user-blurb">Edit your profile to add an about me section</div>
           )}
+          </span>
         </div>
       );
     }

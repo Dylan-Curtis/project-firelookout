@@ -6,10 +6,7 @@ import Marmot from "../images/ProfilePictures/Marmot.png";
 import LookoutMountain from "../images/ProfilePictures/LookoutMountain.png";
 
 const ProfileIcon = ({ iconIndex }) => {
-  // Define an array of profile icons based on the imported image files.
   const profileIcons = [Deer, Bear, Hawk, Goat, LookoutMountain, Marmot];
-console.log(iconIndex)
-  // Ensure the iconIndex is within a valid range.
   const index = Math.max(0, Math.min(iconIndex - 1, profileIcons.length - 1));
 
   return (

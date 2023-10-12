@@ -52,16 +52,7 @@ function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
     if (!user) return <span className="comboForm">  <SignUpForm setUser={setUser} errors = {errors} setErrors={setErrors} user={user} /> 
     </span>    
     
-    const deleteUser  = (e)=>{
-      e.preventDefault()
-      fetch(`/users/${user.id}`, {
-      method: 'DELETE'
-  })
-  .then(r => {
-      if(r.status === 204){
-          setUser(null)} 
-      })}
-
+  
       
 
     const trailCards = trails && trails.map(trail => <TrailCard key={trail.id} trail={trail} reviews={trail.reviews} setLike/>)

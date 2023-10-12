@@ -1,46 +1,41 @@
-import { useState, useContext } from "react";
-import LookoutLogo from '../images/LookoutLogo.png';
+import React, { useState, useContext } from "react";
+import LookoutLogo from "../images/LookoutLogo.png";
 import { useNavigate } from "react-router-dom";
-import EditProfileBackground from '../images/EditProfile.png';
 import { UserContext } from "../App";
 
+import Bear from "../images/ProfilePictures/Bear.png";
+import Deer from "../images/ProfilePictures/Deer.png";
+import Hawk from "../images/ProfilePictures/Hawk.png";
+import Goat from "../images/ProfilePictures/Goat.png";
+import Marmot from "../images/ProfilePictures/Marmot.png";
+import LookoutMountain from "../images/ProfilePictures/LookoutMountain.png";
+
 function EditProfileForm({ handleEditToggle }) {
+  const { user, setUser } = useContext(UserContext);
   const [email, setEmail] = useState("");
-  const [icon, setIcon] = useState("");
   const [name, setName] = useState("");
   const [blurb, setBlurb] = useState("");
-  const [errors, setErrors] = useState("")
+  const [errors, setErrors] = useState("");
+  const [profile_icon, setProfileIcon] = useState(""); 
+
+  const profileIcons = [Deer, Bear, Hawk, Goat, LookoutMountain, Marmot];
 
  
-  const {setUser} = useContext(UserContext);
- 
+
   const navigate = useNavigate();
-
-  // const backgroundStyle = {
-  //   backgroundImage: `url(${EditProfileBackground})`,
-  //   backgroundSize: 'cover',
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundPosition: 'center',
-  //   minHeight: '77vh', // Ensure the container takes up the entire viewport height
-  //   display: 'flex',
-  //   alignItems: 'center', // Vertically center the form
-  //   justifyContent: 'center', // Horizontally center the form
-  //   padding: '20px', // Add some padding around the form
-  // };
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/login", {
-      method: "POST",
+    fetch(`/users/${user.id}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, name, blurb }),
+      body: JSON.stringify({ email, name, blurb, profile_icon }),
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {
-          // Use the setUser function to update user data
-          setUser.setUser(user);
+          setUser(user);
           navigate("/");
         });
       } else {
@@ -53,22 +48,33 @@ function EditProfileForm({ handleEditToggle }) {
     });
   }
 
+  const deleteUser  = (e)=>{
+    e.preventDefault()
+    fetch(`/users/${user.id}`, {
+    method: 'DELETE'
+})
+.then(r => {
+    if(r.status === 204){
+        setUser(null)
+        navigate("/");} 
+    })}
+
   return (
-    <div className="container" 
-    // style={backgroundStyle}
-    >
+    <div className="container">
       <form onSubmit={handleSubmit} className="form">
         <img className="lookoutImageForm" alt="lookoutLogo" src={LookoutLogo}></img>
 
         {Array.isArray(errors) &&
           errors.map((err) => (
-            <p key={err} style={{ color: 'red' }}>
+            <p key={err} style={{ color: "red" }}>
               {err}
             </p>
           ))}
         <div className="title">Edit Profile</div>
-
-        <label htmlFor="lastName"></label>
+        <button onClick={deleteUser} className="smallButton">
+                Delete User
+              </button>
+        <label htmlFor="name"></label>
         <input
           type="text"
           id="name"
@@ -76,16 +82,6 @@ function EditProfileForm({ handleEditToggle }) {
           value={name}
           placeholder="Name"
           onChange={(e) => setName(e.target.value)}
-        />
-
-        <label htmlFor="icon"></label>
-        <input
-          type="text"
-          id="icon"
-          className="input-container"
-          value={icon}
-          placeholder="Profile Picture URL"
-          onChange={(e) => setIcon(e.target.value)}
         />
 
         <label htmlFor="Email"></label>
@@ -99,9 +95,9 @@ function EditProfileForm({ handleEditToggle }) {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <label htmlFor="Email"></label>
+        <label htmlFor="Blurb"></label>
         <input
-          type="test"
+          type="text"
           id="Blurb"
           className="input-container"
           autoComplete="no"
@@ -109,10 +105,28 @@ function EditProfileForm({ handleEditToggle }) {
           placeholder="Add an about me!"
           onChange={(e) => setBlurb(e.target.value)}
         />
-        <span className="button-container">
-        <button type="submit" className="submit">Save</button>
-        <button onClick={handleEditToggle} className="submit">Back</button>
-        </span>
+
+        <div className="profile-icons">
+          <p>Select a profile icon:</p>
+          {profileIcons.map((icon, index) => (
+              <img
+              key={index}
+              src={icon}
+              alt={`Profile Icon ${index}`}
+              className={`profile-pic-header ${profile_icon === index ? "selected" : ""}`}
+              onClick={() => setProfileIcon(index)}
+            />
+          ))}
+        </div>
+
+        <div className="button-container">
+          <button type="submit" className="submit">
+            Save
+          </button>
+          <button onClick={handleEditToggle} className="submit">
+            Back
+          </button>
+        </div>
       </form>
     </div>
   );
