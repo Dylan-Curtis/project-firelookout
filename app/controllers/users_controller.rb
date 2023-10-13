@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end      
 
     def destroy
-        @user.delete()
+        @user.destroy
         head :no_content, status: 204
     end
 

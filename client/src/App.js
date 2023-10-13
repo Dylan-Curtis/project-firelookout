@@ -20,7 +20,7 @@ function App() {
   const [trails, setTrails] = useState(null)
     const [user, setUser] = useState(null)
     const [errors, setErrors] = useState([]);
-    const [liked, setLiked] = useState(false);
+    const [liked, setLiked] = useState(false);    
   return (
     <UserContext.Provider value={{ user, setUser }}>
     <div>

@@ -105,12 +105,12 @@ function AddTrailForm({ onAddTrail }) {
                    placeholder="image URL"                   
                    onChange={handleChange}                      
                 />
-                     {/* <input type="text"
-                   name="map"       
+                     <input type="text"
+                   name="body"       
                    class="input-container"             
-                   placeholder="Enter the map's URL"                   
+                   placeholder="Write a small discription"                   
                    onChange={handleChange}                      
-                /> */}
+                />
                 <button class="submit"> Save New Trail</button>
                 
         </form>

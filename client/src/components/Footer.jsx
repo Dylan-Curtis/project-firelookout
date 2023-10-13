@@ -30,7 +30,7 @@ function Footer() {
         <img className="lookoutImageFooter" alt="lookoutLogo" src={FootImage}></img>
         <div className="footer-content ">
           <div className="LookoutTrails-footer">
-            <strong>Lookout Trails</strong>
+            <strong>LOOKOUT TRAILS</strong>
           </div>
           <Link className='footer-links' to="/">
             <strong >Hike a Trail</strong>
@@ -40,13 +40,13 @@ function Footer() {
           </Link>
           {user ? (
             <>
-              <Link className='footer-links' to="/user">Profile</Link>
+              <Link className='footer-links' to="/user"><strong>View Profile</strong></Link>
               <Link className='footer-links' to="/signup" onClick={logout}>
-                Logout
+                <strong>Logout</strong>
               </Link>
             </>
           ) : (
-            <Link className='footer-links' to="/login">Login</Link>
+            <Link className='footer-links' to="/login"><strong>Login</strong></Link>
           )}
         </div>
       </h1>

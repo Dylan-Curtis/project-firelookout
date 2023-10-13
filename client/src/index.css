@@ -6,7 +6,7 @@ body, h1, h2, h3, p, ul, li {
 body {
   margin: 0;
   background-color: #efeee8;
-  font-family:  'Poppins';
+  font-family:"poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -14,7 +14,7 @@ body {
 }
 
 code {
-  font-family: 'Poppins';
+  font-family:"poppins", sans-serif;
   background-color: #f9f9f7;
 }
 
@@ -29,9 +29,13 @@ code {
   text-decoration: none;   
 }
 
+.container{
+  padding: 30px;
+}
+
 .TOSNotice{
 margin-top: 1vw;
-font-family: 'Poppins';
+font-family:"poppins", sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -97,7 +101,8 @@ background:transparent;
 .image-container {
    position:relative;
    display: inline-block; 
-   
+   border-radius: 5%;
+   overflow: hidden;
 }
 
 .heart-button {
@@ -126,7 +131,6 @@ background:transparent;
   height: 15rem;
   width: 20rem;  
   overflow: hidden;
-  border-radius: 10%;
 }
 
 .trail-image:hover { 
@@ -163,7 +167,7 @@ background:transparent;
 }
 
 .hiking-des{
-  font-family:"poppins";
+  font-family:"poppins", sans-serif;
 line-height: 1.5;
 text-overflow: ellipsis;
 white-space: nowrap;
@@ -184,11 +188,11 @@ white-space: nowrap;
 .LookoutTrails{
 
 position: absolute;
-width: 295px;
+width: 350px;
 height: 53px;
-left: 196px;
+left: 130px;
 top: 23px;
-font-family: 'Poppins';
+font-family:"poppins", sans-serif;
 font-style: normal;
 font-weight: 700;
 font-size: 35px;
@@ -197,8 +201,9 @@ color: #F3C831;
 }
 
 .LookoutTrails-footer{
-font-family: 'Poppins';
+font-family:"poppins", sans-serif;
 font-style: normal;
+width: 350px;
 font-weight: 700;
 font-size: 35px;
 line-height: 52px;
@@ -206,7 +211,7 @@ color: #F3C831;
   }
 
  .footer-links{
-font-family: 'Poppins';
+font-family:"poppins", sans-serif;
 font-style: normal;
 display: flex;
 align-items: center;
@@ -232,9 +237,9 @@ width: 128px;
 height: 21px;
 left: 512px;
 top: 40px;
-font-family: 'Poppins';
+font-family:"poppins", sans-serif;
 font-style: normal;
-font-weight: 700;
+font-weight: 500;
 font-size: 20px;
 line-height: 22px;
 display: flex;
@@ -246,13 +251,13 @@ color: #FFFFFF;
 
 .CreateATrail{
 position: absolute;
-width: 125px;
+width: 200px;
 height: 21px;
 left: 654px;
 top: 40px;
-font-family: 'Poppins';
+font-family:"poppins", sans-serif;
 font-style: normal;
-font-weight: 700;
+font-weight: 500;
 font-size: 20px;
 line-height: 22px;
 display: flex;
@@ -287,7 +292,7 @@ height: auto;
   background-color: #748A76; 
 background: #F3C831;
 border-radius: 30px;
-font-family: 'Poppins';
+font-family:"poppins", sans-serif;
 font-style: normal;
 font-weight: 700;
 font-size: 10px;
@@ -310,7 +315,7 @@ color: #4C6251;
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
-  font-family: 'Poppins';
+  font-family:"poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
   height: 48px;
@@ -379,7 +384,7 @@ color: #4C6251;
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
-  font-family: 'Poppins';
+  font-family:"poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
   height: 48px;
@@ -437,7 +442,7 @@ color: #4C6251;
 }
 
 .smallButton{
-  font-family: 'Poppins';
+  font-family:"poppins", sans-serif;
   font-style: normal;
   background: #F3C831;
   font-size: 12px;
@@ -481,7 +486,7 @@ color: #4C6251;
   /* white-space: nowrap; */
   font-size: 20px;
   height: 21px;
-  font-family: 'Poppins';
+  font-family:"poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
@@ -517,7 +522,7 @@ color: #4C6251;
   }
 
 .user-blurb{
-font-family: 'Poppins';
+font-family:"poppins", sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 15px;
@@ -539,7 +544,7 @@ grid-row: 1;
 }
 
 .user-member-since{ 
-font-family: 'Poppins';
+font-family:"poppins", sans-serif;
 font-style: normal;
 font-weight: 500;
 font-size: 18px;
@@ -552,21 +557,23 @@ grid-row: 2;
 }
 
 .title {
+  display: flex;
   color: #4C6251;
-  font-family: 'Poppins';
+  font-family:"poppins", sans-serif;
   font-size: 36px;
   font-weight: 600;
   margin-top: 30px;
   justify-content: center;
   align-items: center;
-  margin-left: 3%;
   grid-column: 2;
   grid-row: 1;
+  text-align: center;
+  padding-bottom: 7%;
 }
 
 .subtitle {
   color: #65657b;
-  font-family: 'Poppins';
+  font-family:"poppins", sans-serif;
   font-size: 16px;
   font-weight: 600;
   margin-top: 10px;
@@ -588,13 +595,13 @@ grid-row: 2;
   margin-bottom: 1vw; 
   border: 2px solid #4C6251;
   border-radius: 10px; 
-
+  padding: 0px 20px 0; 
 }
 
 .input { 
   font-size: 18px;
   height: 100%; 
-  padding: 4px 20px 0; 
+  padding: 10px 20px 0; 
 }
 
 .cut {
@@ -617,7 +624,7 @@ grid-row: 2;
 
 .placeholder {
   color: #65657b;
-  font-family: 'Poppins';
+  font-family:"poppins", sans-serif;
   left: 20px;
   line-height: 14px;
   pointer-events: none;
@@ -699,7 +706,7 @@ grid-row: 2;
 
   .trail-page-tags{ 
     display: grid; 
-    font-family: 'Poppins';
+    font-family:"poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -738,7 +745,7 @@ grid-row: 2;
     .trail-page-name{
   grid-column: 1 /5;
   grid-row: 1;
-  font-family: 'Poppins';
+  font-family:"poppins", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 35px;
@@ -762,7 +769,7 @@ grid-row: 2;
 
   .trail-page-body{   
     grid-column: 1 / 4; 
-    font-family: 'Poppins';
+    font-family:"poppins", sans-serif;
     font-style: normal;    
     font-weight: 400;
     font-size: 15px;
@@ -837,7 +844,7 @@ grid-row: 2;
 }
 .user-hikes{
 margin-left: 10vw;
-font-family: 'Poppins';
+font-family:"poppins", sans-serif;
 font-style: normal;
 display: flex;
 font-size: 28px;
@@ -847,7 +854,7 @@ padding-top:40px;
 }
 .user-reviews{
   margin-left: 10vw;
-  font-family: 'Poppins';
+  font-family:"poppins", sans-serif;
   font-style: normal;
   display: flex;
   font-size: 28px;
@@ -863,7 +870,7 @@ padding-top:40px;
 
 .review-name{ 
   display: grid; 
-  font-family: 'Poppins';
+  font-family:"poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -906,7 +913,7 @@ padding-top:40px;
 }
 
 .review-condition{
-  font-family: 'Poppins';
+  font-family:"poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -914,7 +921,7 @@ padding-top:40px;
   color: #748A76;
 }
 .revew-form-lables{
-font-family: 'Poppins';
+font-family:"poppins", sans-serif;
 font-style: normal;
 font-weight: 600;
 font-size: 18px;

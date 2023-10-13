@@ -45,9 +45,8 @@ function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
    
   }, [trails]);
   console.log(user)
-  function onAddTrail(newTrail) {
-    setTrails(currentTrails =>[...currentTrails, newTrail]);
-  } 
+
+
     
     if (!user) return <span className="comboForm">  <SignUpForm setUser={setUser} errors = {errors} setErrors={setErrors} user={user} /> 
     </span>    
