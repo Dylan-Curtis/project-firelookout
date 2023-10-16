@@ -76,7 +76,8 @@ function TrailPage({ onSubmit }) {
       {showReviewForm ? (        
         <TrailReviewForm trail={trail} setShowReviewForm={setShowReviewForm} onSubmit={onSubmit} setReviews={setReviews} />
       ) : (
-        <div className="trail-page-container">          
+        <div className="trail-page-container">
+          <div className="trail-page-image">        
           {showMap ? (
               <img src={trail.map} alt={trail.name}  className="trail-page-image" />
           ) : (
@@ -86,7 +87,8 @@ function TrailPage({ onSubmit }) {
             onClick={toggleMap}
             className='map-button'>
             <img src={MapIcon} alt="Map"/>
-          </button>          
+          </button> 
+          </div>           
           <div className="trail-page-content">
             <div className="trail-page-name">
               {trail.name}
@@ -100,7 +102,7 @@ function TrailPage({ onSubmit }) {
             <div className="trail-page-info">
               <RenderStars className="trail-page-rating" reviews={reviews} trail={trail} />
               <div className="trail-page-tags">
-              • {trail.length}mi • {trail.elevation_gain}Elevation Gain
+              {trail.length}mi • {trail.elevation_gain}<div>Elevation Gain</div>
               </div>
             </div>
 

@@ -1,4 +1,4 @@
 class Like < ApplicationRecord
-  belongs_to :user, dependent: :destroy
-  belongs_to :trail, dependent: :destroy
+  belongs_to :user
+  belongs_to :trail
 end

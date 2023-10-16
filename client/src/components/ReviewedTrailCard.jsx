@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import RenderStars from "./RenderStars";
 
 function ReviewedTrailCard({ trail, review }) {
+  console.log(review)
   return (
     <div className="TrailCard">
       <div className="image-container">

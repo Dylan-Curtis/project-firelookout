@@ -3,7 +3,9 @@ import EditProfileForm from "./EditProfileForm";
 import { UserContext } from "../App";
 import TrailCard from './TrailCard';
 import ReviewedTrailCard from './ReviewedTrailCard';
-import UserCard from './UserCard'; // Import UserCard component
+import UserCard from './UserCard'; 
+import EmptyLikes from './EmptyLikes'
+import EmptyReviews from './EmptyReviews'
 
 function UserProfile() {
   const [showEditProfileForm, setShowEditProfileForm] = useState(false);
@@ -76,10 +78,10 @@ function UserProfile() {
         <UserCard handleEditToggle={handleEditToggle}/>
       )}
       <h3 className="user-hikes">{user.name}'s Favorite Lookout Hikes</h3>
-      <div className="user-liked-trails">{trailCards}</div>
+      {likedTrails.length === 0 ? <EmptyLikes /> : <div className="user-liked-trails">{trailCards}</div>}
       <div>
         <h3 className="user-hikes">{user.name}'s Past Lookout Hikes</h3>
-        <div className="user-liked-trails">{reviewedTrailCards}</div>
+        {userReviews.length === 0 ? <EmptyReviews /> : <div className="user-liked-trails">{reviewedTrailCards}</div>}        
       </div>
     </div>
   );

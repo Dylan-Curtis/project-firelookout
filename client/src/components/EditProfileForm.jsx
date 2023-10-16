@@ -96,7 +96,7 @@ function EditProfileForm({ handleEditToggle }) {
         />
 
         <label htmlFor="Blurb"></label>
-        <input
+        <textarea
           type="text"
           id="Blurb"
           className="input-container"
@@ -107,14 +107,14 @@ function EditProfileForm({ handleEditToggle }) {
         />
 
         <div className="profile-icons">
-          <p>Select a profile icon:</p>
+          <p className="revew-form-lables">Select a profile icon:</p>
           {profileIcons.map((icon, index) => (
               <img
               key={index}
               src={icon}
               alt={`Profile Icon ${index}`}
-              className={`profile-pic-header ${profile_icon === index ? "selected" : ""}`}
-              onClick={() => setProfileIcon(index)}
+              className={`profile-pic-header ${profile_icon === (index + 1) ? "selected" : ""}`}
+              onClick={() => setProfileIcon(index + 1)}
             />
           ))}
         </div>
