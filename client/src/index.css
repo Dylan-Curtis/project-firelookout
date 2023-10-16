@@ -873,6 +873,12 @@ grid-row: 2;
 .edit-profile-form {
   flex: 1; 
 }
+
+.profile-icons{
+  text-align: center;
+  
+}
+
 .user-hikes{
 margin-left: 10vw;
 font-family:"poppins", sans-serif;
