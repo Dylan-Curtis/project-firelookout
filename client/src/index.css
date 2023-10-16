@@ -704,7 +704,6 @@ grid-row: 2;
   }
 
   .trail-page-tags{ 
-    display: grid; 
     font-family:"poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -712,15 +711,17 @@ grid-row: 2;
     line-height: 27px;
     color: #748A76;
     justify-content:space-evenly;
-    grid-column: 4/ 7;
+    display: flex;
+    align-items: center;
+    white-space:nowrap;
   }
 
   .trailList {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Create four equally sized columns */
-  gap: 20px; /* Adjust the gap between cards as needed */
-  justify-items: center; /* Center items horizontally within each column */
-  padding: 20px; /* Adjust the padding as needed */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
+  justify-items: center; 
+  padding: 20px;
   }
 
   .trail-page-content{

@@ -102,8 +102,15 @@ function TrailPage({ onSubmit }) {
             <div className="trail-page-info">
               <RenderStars className="trail-page-rating" reviews={reviews} trail={trail} />
               <div className="trail-page-tags">
-              {trail.length}mi • {trail.elevation_gain}<div>Elevation Gain</div>
+              •{trail.length}mi • {trail.elevation_gain} Feet of Elevation Gain •
+              <button
+    className="smallButton"
+    onClick={() => setShowReviewForm(true)}
+  >
+    LEAVE A REVIEW
+  </button>
               </div>
+              
             </div>
 
             <p className="trail-page-body">{trail.body}</p>
@@ -111,13 +118,7 @@ function TrailPage({ onSubmit }) {
 
           <div className="trail-page-reviews">
             <h3>
-              Reviews{" "}
-              <button
-                className="smallButton"
-                onClick={() => setShowReviewForm(true)}
-              >
-                LEAVE A REVIEW
-              </button>
+              Reviews{" "}            
             </h3>
             {reviews.length > 0 ? (
               <div className="review-list">
