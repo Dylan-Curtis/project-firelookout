@@ -118,12 +118,12 @@ background:transparent;
 
 .map-button {
   position: absolute;
-  justify-self: center;
+  top: 22vh;
+  right: 52vw; 
   background: transparent;
   border: none;
   font-size: 24px;
-  cursor: pointer; 
-  grid-column: 2;
+  cursor: pointer;  
 }
 
 .trail-image {
@@ -738,7 +738,8 @@ grid-row: 2;
     width: 534px;
     height: 598px;
     left: 201px; 
-    margin-top: 10vh;     
+    margin-top: 5vh; 
+    
     }
 
     .trail-page-name{
