@@ -72,7 +72,7 @@ function EditProfileForm({ handleEditToggle }) {
           ))}
         <div className="title">Edit Profile</div>
         <button onClick={deleteUser} className="smallButton">
-                Delete User
+                DELETE USER
               </button>
         <label htmlFor="name"></label>
         <input

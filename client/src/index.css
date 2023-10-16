@@ -447,6 +447,7 @@ color: #4C6251;
   line-height: 15px;
   border-radius: 30px;
   color: #4C6251;
+  font-weight: 600;
 }
 
 .form {
@@ -909,10 +910,10 @@ padding-top:40px;
 }
 
 .review-header {
-  display: flex; /* Makes the children elements appear in a row */
-  align-items: center; /* Vertically centers the children elements */
-  margin-bottom: 10px; /* Adds spacing between the header and the stars */
-  font-weight: bold; /* Makes the text bold, adjust as needed */
+  display: flex; 
+  align-items: center; 
+  margin-bottom: 10px; 
+  font-weight: bold;
 }
 
 .review-date{
@@ -963,4 +964,12 @@ color: #4A5744;
   display: flex;
   gap: 10px;
   justify-content: flex-end;
+}
+
+.stars{
+  cursor: pointer;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  align-items: center;
 }

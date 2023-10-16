@@ -13,7 +13,7 @@ function UserCard({handleEditToggle}) {
             <h3 className="title">
               {user.name}
               <button onClick={handleEditToggle} className="smallButton">
-                Edit Account
+                EDIT ACCOUNT
               </button>
               {user.created_at}
             </h3>

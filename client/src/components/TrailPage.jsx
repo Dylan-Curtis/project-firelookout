@@ -116,7 +116,7 @@ function TrailPage({ onSubmit }) {
                 className="smallButton"
                 onClick={() => setShowReviewForm(true)}
               >
-                Leave a Review
+                LEAVE A REVIEW
               </button>
             </h3>
             {reviews.length > 0 ? (
