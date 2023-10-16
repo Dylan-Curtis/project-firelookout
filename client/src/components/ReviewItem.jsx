@@ -24,7 +24,8 @@ function ReviewItem({ review }) {
 console.log(review)
     return (
       <div className="review-item">
-      <div className='review-name'>{review.name}</div>
+      {review.user && review.user.name ? (<div className='review-name'>{review.user.name}</div>):(<div className='review-name'>{review.name}</div>)}
+      {/* <div className='review-name'>{review.name}</div> */}
       <div className="review-header">
         <div className='review-date'>{review.date}</div>
         <div className='review-condition'>{review.condition}</div>
