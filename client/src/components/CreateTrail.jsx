@@ -1,73 +1,68 @@
-import { useState } from "react"
-import LookoutLogo from '../images/LookoutLogo.png'
-import CreateATrailBackground from '../images/CreateATrailBackground.png'
+import { useState } from "react";
+import LookoutLogo from '../images/LookoutLogo.png';
+import CreateATrailBackground from '../images/CreateATrailBackground.png';
+import { useNavigate } from "react-router-dom";
 
-function AddTrailForm({ onAddTrail }) {
-    const [trailData, setTrailData] = useState({
-        name: "",
-        elevation_gain: "",
-        length: "",
-        body: "",
-        location: "",            
-        image: "",
-        // map:""
+function AddTrailForm() {
+  const navigate = useNavigate();
+  const [trailData, setTrailData] = useState({
+    name: "",
+    elevation_gain: "",
+    length: "",
+    body: "",
+    image: "",
+    map: "",
+  });
+
+  const backgroundStyle = {
+    backgroundImage: `url(${CreateATrailBackground})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    minHeight: '77vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '20px',
+  };
+
+  function handleChange(e) {
+    setTrailData({
+      ...trailData,
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    fetch("/trails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(trailData),
     })
+      .then((response) => {
+        if (response.status === 201) {
+          // Reset form fields to clear input values
+          setTrailData({
+            name: "",
+            elevation_gain: "",
+            length: "",
+            body: "",
+            image: "",
+            map: "",
+          });
 
-    const backgroundStyle = {
-      backgroundImage: `url(${CreateATrailBackground})`,
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      minHeight: '77vh', // Ensure the container takes up the entire viewport height
-      display: 'flex',
-      alignItems: 'center', // Vertically center the form
-      justifyContent: 'center', // Horizontally center the form
-      padding: '20px', // Add some padding around the form
-    };
-
-    function handleChange(e) {
-        setTrailData({
-          ...trailData,
-          [e.target.name]: e.target.value,
-        });
-      }
-
-    function handleSubmit(e){
-        e.preventDefault()
-
-        
-
-        fetch("/trails", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(trailData),
-          })
-          .then((r) => {
-           if (r.status === 201){
-            r.json()
-            .then(trailOBJ=> {
-                onAddTrail(trailOBJ)              
-            })
-           }
-        //    else {
-        //     r.json()
-        //     .then(messOBJ=>  setMessage(messOBJ.message))
-        //    }
-        //   })
-          // .then(onAddPlayer);
-
-          //   setPlayerData({
-          //     firstName: "",
-          //     lastName: "",
-          //     playerNumber: "",
-          //     professionalTeam: "",
-          //     position: "",            
-          //     imgURL: ""
-          // })
-        })}
-    
+          // Navigate to the desired route
+          navigate("/");
+        } else {
+          // Handle errors, e.g., display an error message
+          console.error("Failed to create a new trail.");
+        }
+      });
+  }
    
     return(
       <div className="container" style={backgroundStyle}>
@@ -93,12 +88,12 @@ function AddTrailForm({ onAddTrail }) {
                    placeholder="Enter length in miles"                  
                    onChange={handleChange}                       
                 />
-                 <input type="text"
+                 {/* <input type="text"
                    name="location"   
                    class="input-container"                 
                    placeholder="Location"                   
                    onChange={handleChange}                      
-                />
+                /> */}
                    <input type="text"
                    name="image"     
                    class="input-container"               

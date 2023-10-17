@@ -25,7 +25,7 @@ class TrailsController < ApplicationController
     private
   
     def trail_params
-      params.permit(:name, :elevation_gain, :length, :body, :location, :image, :map)
+      params.permit(:name, :elevation_gain, :length, :body, :image, :map)
     end
   
     def find_trail
