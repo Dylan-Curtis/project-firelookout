@@ -13,11 +13,11 @@ function LoginForm({ onLogin, setErrors, errors }) {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
-      minHeight: '67vh', // Ensure the container takes up the entire viewport height
+      minHeight: '67vh',
       display: 'flex',
-      alignItems: 'center', // Vertically center the form
-      justifyContent: 'center', // Horizontally center the form
-      padding: '20px', // Add some padding around the form
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      padding: '20px', 
     };
 
     function handleSubmit(e) {
@@ -54,8 +54,6 @@ function LoginForm({ onLogin, setErrors, errors }) {
               </p>
             ))}
               <div class="title">Welcome Back!</div>
-             
-                {/* <label htmlFor="email">Email</label> */}
                 <input
                   type="text"
                   id="email"
@@ -66,7 +64,6 @@ function LoginForm({ onLogin, setErrors, errors }) {
                   onChange={(e) => setEmail(e.target.value)}
                 /> 
             
-             
                 <label htmlFor="password"></label>
                 <input
                   type="password"
@@ -78,8 +75,7 @@ function LoginForm({ onLogin, setErrors, errors }) {
                   onChange={(e) => setPassword(e.target.value)}
                 />                       
              
-             
-                <button type="submit" class="submit">Submit</button>
+                <button type="submit" class="submit">LOG IN</button>
                 <div class="subtitle">Don't Have an Account?<Link to="/signup"> Sign Up!</Link></div>
               
                 <div className="TOSNotice">

@@ -101,7 +101,7 @@ function SignUpForm({ setUser, setErrors, errors }) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <button type="submit" className="submit">Submit</button>
+      <button type="submit" className="submit">SIGN UP</button>
       <div className="subtitle">Have An Account Already? <Link to="/login"> Log In!</Link></div>
       <div className="TOSNotice">
           By continuing to use Lookout Trails, you agree to our <strong>Terms of Service</strong> and <strong>Privacy Policy.</strong>  

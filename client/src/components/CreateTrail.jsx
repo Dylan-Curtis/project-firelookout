@@ -94,10 +94,17 @@ function AddTrailForm() {
                    placeholder="Location"                   
                    onChange={handleChange}                      
                 /> */}
+                   
                    <input type="text"
                    name="image"     
                    class="input-container"               
                    placeholder="image URL"                   
+                   onChange={handleChange}                      
+                />
+                <input type="text"
+                   name="map"     
+                   class="input-container"               
+                   placeholder="map URL"                   
                    onChange={handleChange}                      
                 />
                      <input type="text"

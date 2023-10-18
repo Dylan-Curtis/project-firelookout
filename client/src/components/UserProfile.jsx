@@ -11,6 +11,7 @@ function UserProfile() {
   const [showEditProfileForm, setShowEditProfileForm] = useState(false);
   const [likedTrails, setLikedTrails] = useState([]);
   const [userReviews, setUserReviews] = useState([]);
+  
   const { user, setUser } = useContext(UserContext);
 
   const handleEditToggle = () => {
