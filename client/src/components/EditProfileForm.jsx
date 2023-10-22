@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import LookoutLogo from "../images/LookoutLogo.png";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../App";
-import { DeleteUserForm } from "./DeleteUserForm"
 
 import Bear from "../images/ProfilePictures/Bear.png";
 import Deer from "../images/ProfilePictures/Deer.png";
@@ -82,18 +81,24 @@ function EditProfileForm({ handleEditToggle }) {
           )))
         }
         <div className="title">Edit Profile</div>
-        <button onClick={deleteUser} className="smallButton">
-          DELETE USER
-        </button>
+        
 
         {showConfirmation ? (
-          <div className="confirmation-dialog">
+          <div className="revew-form-lables">
             <p>Are you sure you want to delete your profile?</p>
-            <button onClick={confirmDelete}>Yes</button>
-            <button onClick={() => setShowConfirmation(false)}>No, go back</button>
+            <div className="button-container">
+            <button onClick={confirmDelete} className={"submit"}>Yes</button>
+            <button onClick={() => setShowConfirmation(false)} className="yellowButton">No, go back</button>
+            </div>
           </div>
         ) : (
+          
           <div>
+            <div className="deleteButtonContainer">
+            <button onClick={deleteUser} className="deleteButton">
+          DELETE USER
+        </button>
+        </div>
             <label htmlFor="name"></label>
             <input
               type="text"
@@ -127,7 +132,7 @@ function EditProfileForm({ handleEditToggle }) {
             />
 
             <div className="profile-icons">
-              <p className="review-form-label">Select a profile icon:</p>
+              <p className="revew-form-lables">Select a profile icon:</p>
               {profileIcons.map((icon, index) => (
                 <img
                   key={index}
@@ -143,7 +148,7 @@ function EditProfileForm({ handleEditToggle }) {
               <button type="submit" className="submit">
                 Save
               </button>
-              <button onClick={handleEditToggle} className="submit">
+              <button onClick={handleEditToggle} className="yellowButton">
                 Back
               </button>
             </div>

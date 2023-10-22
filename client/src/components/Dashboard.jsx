@@ -61,16 +61,8 @@ function Dashboard({ user, setUser, setErrors, setTrails, errors, trails }) {
         <>     
         <img className="headImage"src={HeadImage} alt="lookoutimg"></img>    
          <div className="trailList">
-{/*          
-         <ChangeName onLogin={setUser} errors ={errors} setErrors={setErrors} user={user}/> */}
-          {trailCards}
-          
-        </div>
-        
-            
-        {/* {user ?  <button type="submit" onClick={logout}>Signout</button> : null}
-        { user ? <button onClick={deleteUser}>DeleteUser</button>:""  }    */}
-             
+          {trailCards}          
+        </div> 
         </>
         )
       }
