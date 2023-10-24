@@ -18,10 +18,11 @@ function TrailPage({ onSubmit }) {
   useEffect(() => {
     const checkLikedStatus = async () => {
       try {
-        const response = await fetch(`/likes/show?trail_id=${trail.id}&user_id=${user.id}`);
+        const response = await fetch(`/likes/show?trail_id=${trailId}&user_id=${user.id}`);
         if (response.ok) {
           const likedStatus = await response.json();
           setLiked(likedStatus);
+          console.log(trail.id)
           console.log(liked)
         } else {
           console.error('Failed to check liked status for trail');
