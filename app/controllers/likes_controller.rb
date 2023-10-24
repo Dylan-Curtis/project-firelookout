@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :find_user, only: [:toggle_like, :liked_trails]
+  before_action :find_user, only: [:toggle_like, :liked_trails,:destroy]
   before_action :find_trail, only: [:toggle_like]
 
   def toggle_like
@@ -25,6 +25,11 @@ class LikesController < ApplicationController
     else
       render json:  false 
     end
+  end
+
+  def destroy        
+    @user.likes.destroy_all
+    head :no_content, status: 204    
   end
 
   def liked_trails
