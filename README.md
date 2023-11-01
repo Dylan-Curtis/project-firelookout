@@ -80,10 +80,11 @@ In order to run the application locally, we need to start the local server.
 
 
 ## Demo
-Here is how the app should look:
+To see a walkthrough of what the project looks like here is a link to my LInkedIn page https://www.linkedin.com/feed/update/urn:li:activity:7125186811835940865/
 
-![Demo gif]([https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjg2NzkyOTMxMWExNzgyZDFiOGE1NTdmZTlhYTEwN2I0Mjg5MTlkNyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/P3H6X3MFMxp1LT6XoA/giphy.gif](https://www.linkedin.com/feed/update/urn:li:activity:7125186811835940865/))
+I collaborated with UX designer Glenna Garvey. To see the figma file follow this link: https://www.figma.com/file/AiPSSOdDaMgtabKe2GiE0m/Dylan's-Project?type=design&node-id=0%3A1&mode=design&t=Bj5TB6Kw4YegUUGv-1
 
+To connect with Glenna here is a link to her linkedIn page:  https://www.linkedin.com/in/glenna-garvey/
 
 Copyright (c) [2023] [Dylan Curtis]
  
