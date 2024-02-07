@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2023_10_02_183918) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "likes", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "trail_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "trail_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["trail_id"], name: "index_likes_on_trail_id"
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 2023_10_02_183918) do
     t.text "body"
     t.string "condition"
     t.integer "rating"
-    t.integer "trail_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "trail_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "date"
