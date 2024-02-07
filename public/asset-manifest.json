@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a05cce14.chunk.css",
+    "main.js": "/static/js/main.0fe9b403.chunk.js",
+    "main.js.map": "/static/js/main.0fe9b403.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.1af04817.js",
+    "runtime-main.js.map": "/static/js/runtime-main.1af04817.js.map",
+    "static/js/2.236407ba.chunk.js": "/static/js/2.236407ba.chunk.js",
+    "static/js/2.236407ba.chunk.js.map": "/static/js/2.236407ba.chunk.js.map",
+    "static/js/3.768f201f.chunk.js": "/static/js/3.768f201f.chunk.js",
+    "static/js/3.768f201f.chunk.js.map": "/static/js/3.768f201f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.a05cce14.chunk.css.map": "/static/css/main.a05cce14.chunk.css.map",
+    "static/js/2.236407ba.chunk.js.LICENSE.txt": "/static/js/2.236407ba.chunk.js.LICENSE.txt",
+    "static/media/Bear.a4e9a610.png": "/static/media/Bear.a4e9a610.png",
+    "static/media/CreateATrailBackground.0b51c3ef.png": "/static/media/CreateATrailBackground.0b51c3ef.png",
+    "static/media/Deer.8d689cf9.png": "/static/media/Deer.8d689cf9.png",
+    "static/media/Goat.496635ca.png": "/static/media/Goat.496635ca.png",
+    "static/media/Hawk.607fb442.png": "/static/media/Hawk.607fb442.png",
+    "static/media/HeadImage.e85942c1.png": "/static/media/HeadImage.e85942c1.png",
+    "static/media/LookoutMountain.4a2dd610.png": "/static/media/LookoutMountain.4a2dd610.png",
+    "static/media/Marmot.84caa1ff.png": "/static/media/Marmot.84caa1ff.png",
+    "static/media/ReviewBackground.ab146dba.png": "/static/media/ReviewBackground.ab146dba.png",
+    "static/media/SignInBackground.6e9b495c.png": "/static/media/SignInBackground.6e9b495c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1af04817.js",
+    "static/js/2.236407ba.chunk.js",
+    "static/css/main.a05cce14.chunk.css",
+    "static/js/main.0fe9b403.chunk.js"
+  ]
+}
